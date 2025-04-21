@@ -4388,6 +4388,7 @@
     left: 0;
     top: 0px;
     -webkit-transition: all 0.4s ease;
+    
     transition: all 0.4s ease;
   }
   
