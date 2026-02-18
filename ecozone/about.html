@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,10 +8,19 @@
   <link rel="icon" href="assets/img/ngite_space_logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     :root {
       --forest: #1a3d2b;
       --leaf: #2d6a4f;
@@ -23,69 +33,208 @@
       --heading-font: 'Playfair Display', serif;
       --body-font: 'DM Sans', sans-serif;
     }
-    html { scroll-behavior: smooth; }
-    body { font-family: var(--body-font); color: var(--charcoal); background: var(--offwhite); overflow-x: hidden; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--body-font);
+      color: var(--charcoal);
+      background: var(--offwhite);
+      overflow-x: hidden;
+    }
 
     /* ── NAV (same as homepage) ── */
     nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
       padding: 0 48px;
-      display: flex; align-items: center; justify-content: space-between;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       height: 72px;
-      background: rgba(26,61,43,0.95);
+      background: rgba(26, 61, 43, 0.95);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(201,168,76,0.2);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.2);
       transition: all 0.3s;
     }
-    nav.scrolled { height: 64px; box-shadow: 0 4px 30px rgba(0,0,0,0.2); }
-    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-    .nav-logo img { height: 36px; }
-    .nav-logo span { font-family: var(--heading-font); font-size: 1.1rem; color: #fff; }
-    .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
-    .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.875rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; position: relative; }
-    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 100%; height: 1px; background: var(--gold); transition: right 0.3s; }
-    .nav-links a:hover, .nav-links a.active { color: #fff; }
-    .nav-links a:hover::after, .nav-links a.active::after { right: 0; }
-    .nav-cta { background: var(--gold); color: var(--forest) !important; padding: 8px 20px; border-radius: 2px; font-weight: 600 !important; }
-    .nav-cta::after { display: none !important; }
-    .nav-toggle { display: none; background: none; border: none; cursor: pointer; color: #fff; font-size: 1.4rem; }
-    .mobile-menu { display: none; position: fixed; top: 72px; left: 0; right: 0; background: var(--forest); padding: 24px 32px 32px; flex-direction: column; gap: 20px; border-top: 1px solid rgba(201,168,76,0.2); z-index: 99; }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 1rem; font-weight: 500; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+
+    nav.scrolled {
+      height: 64px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .nav-logo img {
+      height: 36px;
+    }
+
+    .nav-logo span {
+      font-family: var(--heading-font);
+      font-size: 1.1rem;
+      color: #fff;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 100%;
+      height: 1px;
+      background: var(--gold);
+      transition: right 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #fff;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      right: 0;
+    }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--forest) !important;
+      padding: 8px 20px;
+      border-radius: 2px;
+      font-weight: 600 !important;
+    }
+
+    .nav-cta::after {
+      display: none !important;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #fff;
+      font-size: 1.4rem;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 72px;
+      left: 0;
+      right: 0;
+      background: var(--forest);
+      padding: 24px 32px 32px;
+      flex-direction: column;
+      gap: 20px;
+      border-top: 1px solid rgba(201, 168, 76, 0.2);
+      z-index: 99;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
 
     /* ── PAGE HERO ── */
     .page-hero {
       position: relative;
       height: 460px;
-      display: flex; align-items: flex-end;
+      display: flex;
+      align-items: flex-end;
       overflow: hidden;
       margin-top: 72px;
     }
+
     .page-hero-bg {
-      position: absolute; inset: 0;
+      position: absolute;
+      inset: 0;
       background: url('assets/img/cocoa2.jpeg') center/cover no-repeat;
       transform: scale(1.05);
       transition: transform 8s ease;
     }
-    .page-hero-bg.loaded { transform: scale(1); }
-    .page-hero-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(26,61,43,0.95) 0%, rgba(26,61,43,0.4) 60%, rgba(0,0,0,0.1) 100%);
+
+    .page-hero-bg.loaded {
+      transform: scale(1);
     }
+
+    .page-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(26, 61, 43, 0.95) 0%, rgba(26, 61, 43, 0.4) 60%, rgba(0, 0, 0, 0.1) 100%);
+    }
+
     .page-hero-content {
-      position: relative; z-index: 2;
+      position: relative;
+      z-index: 2;
       padding: 0 80px 64px;
       width: 100%;
     }
+
     .breadcrumb {
-      display: flex; gap: 8px; align-items: center;
+      display: flex;
+      gap: 8px;
+      align-items: center;
       list-style: none;
       margin-bottom: 16px;
     }
-    .breadcrumb li { color: rgba(255,255,255,0.5); font-size: 0.8rem; }
-    .breadcrumb li a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
-    .breadcrumb li a:hover { color: var(--gold); }
-    .breadcrumb li.sep::before { content: '/'; margin-right: 8px; }
+
+    .breadcrumb li {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.8rem;
+    }
+
+    .breadcrumb li a {
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .breadcrumb li a:hover {
+      color: var(--gold);
+    }
+
+    .breadcrumb li.sep::before {
+      content: '/';
+      margin-right: 8px;
+    }
+
     .page-hero h1 {
       font-family: var(--heading-font);
       font-size: clamp(2.5rem, 5vw, 4rem);
@@ -93,230 +242,632 @@
       color: #fff;
       line-height: 1.15;
     }
-    .page-hero h1 em { font-style: italic; color: var(--gold); }
+
+    .page-hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
 
     /* ── SHARED ── */
-    .section-label { display: inline-block; color: var(--sage); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px; }
-    .section-title { font-family: var(--heading-font); font-size: clamp(1.9rem, 3vw, 2.8rem); font-weight: 700; color: var(--forest); line-height: 1.25; margin-bottom: 24px; }
-    .section-title em { font-style: italic; color: var(--gold); }
-    .body-text { color: var(--muted); line-height: 1.85; font-size: 0.95rem; margin-bottom: 16px; }
-    .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: var(--forest); padding: 14px 32px; font-weight: 600; font-size: 0.9rem; text-decoration: none; border-radius: 2px; transition: all 0.25s; }
-    .btn-primary:hover { background: #e0bc62; transform: translateY(-1px); }
-    .divider { height: 1px; background: linear-gradient(to right, transparent, rgba(82,183,136,0.3), transparent); margin: 0 80px; }
+    .section-label {
+      display: inline-block;
+      color: var(--sage);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: var(--heading-font);
+      font-size: clamp(1.9rem, 3vw, 2.8rem);
+      font-weight: 700;
+      color: var(--forest);
+      line-height: 1.25;
+      margin-bottom: 24px;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .body-text {
+      color: var(--muted);
+      line-height: 1.85;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gold);
+      color: var(--forest);
+      padding: 14px 32px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.25s;
+    }
+
+    .btn-primary:hover {
+      background: #e0bc62;
+      transform: translateY(-1px);
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(82, 183, 136, 0.3), transparent);
+      margin: 0 80px;
+    }
 
     /* ── WHO WE ARE ── */
     .who-we-are {
       padding: 100px 80px;
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 80px; align-items: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
     }
-    .who-images { position: relative; }
-    .who-img-main { width: 100%; height: 560px; object-fit: cover; border-radius: 4px; }
+
+    .who-images {
+      position: relative;
+    }
+
+    .who-img-main {
+      width: 100%;
+      height: 560px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
     .who-img-accent {
-      position: absolute; bottom: -32px; right: -32px;
-      width: 200px; height: 200px;
-      object-fit: cover; border-radius: 4px;
+      position: absolute;
+      bottom: -32px;
+      right: -32px;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 4px;
       border: 6px solid var(--offwhite);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
     }
+
     .reg-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--cream); border: 1px solid rgba(82,183,136,0.3);
-      color: var(--forest); padding: 10px 16px; border-radius: 4px;
-      font-size: 0.8rem; font-weight: 600; margin-bottom: 28px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--cream);
+      border: 1px solid rgba(82, 183, 136, 0.3);
+      color: var(--forest);
+      padding: 10px 16px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 28px;
     }
-    .reg-badge i { color: var(--sage); }
+
+    .reg-badge i {
+      color: var(--sage);
+    }
+
     .priority-crops {
-      display: flex; gap: 12px; margin: 28px 0;
+      display: flex;
+      gap: 12px;
+      margin: 28px 0;
     }
+
     .crop-tag {
-      display: flex; align-items: center; gap: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
       padding: 12px 20px;
-      background: var(--forest); color: #fff;
-      border-radius: 4px; font-size: 0.875rem; font-weight: 500;
+      background: var(--forest);
+      color: #fff;
+      border-radius: 4px;
+      font-size: 0.875rem;
+      font-weight: 500;
     }
-    .crop-tag i { color: var(--gold); }
+
+    .crop-tag i {
+      color: var(--gold);
+    }
 
     /* ── MISSION VISION VALUES ── */
     .mvv {
       padding: 0 80px 100px;
-      display: grid; grid-template-columns: repeat(3, 1fr);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
+
     .mvv-card {
       padding: 40px 36px;
       border-radius: 4px;
       position: relative;
       overflow: hidden;
     }
+
     .mvv-card::before {
       content: '';
-      position: absolute; top: 0; left: 0; right: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
       height: 4px;
     }
-    .mvv-card.mission { background: var(--forest); }
-    .mvv-card.mission::before { background: var(--gold); }
-    .mvv-card.vision { background: var(--cream); border: 1px solid rgba(0,0,0,0.06); }
-    .mvv-card.vision::before { background: var(--sage); }
-    .mvv-card.values { background: var(--cream); border: 1px solid rgba(0,0,0,0.06); }
-    .mvv-card.values::before { background: var(--leaf); }
+
+    .mvv-card.mission {
+      background: var(--forest);
+    }
+
+    .mvv-card.mission::before {
+      background: var(--gold);
+    }
+
+    .mvv-card.vision {
+      background: var(--cream);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .mvv-card.vision::before {
+      background: var(--sage);
+    }
+
+    .mvv-card.values {
+      background: var(--cream);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .mvv-card.values::before {
+      background: var(--leaf);
+    }
+
     .mvv-icon {
-      width: 48px; height: 48px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 1.2rem;
       margin-bottom: 20px;
     }
-    .mission .mvv-icon { background: rgba(255,255,255,0.1); color: var(--gold); }
-    .vision .mvv-icon, .values .mvv-icon { background: var(--offwhite); color: var(--leaf); }
+
+    .mission .mvv-icon {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--gold);
+    }
+
+    .vision .mvv-icon,
+    .values .mvv-icon {
+      background: var(--offwhite);
+      color: var(--leaf);
+    }
+
     .mvv-card h3 {
       font-family: var(--heading-font);
-      font-size: 1.3rem; font-weight: 700;
+      font-size: 1.3rem;
+      font-weight: 700;
       margin-bottom: 16px;
     }
-    .mission h3 { color: #fff; }
-    .vision h3, .values h3 { color: var(--forest); }
-    .mission p { color: rgba(255,255,255,0.75); font-size: 0.9rem; line-height: 1.8; }
-    .vision p, .values p { color: var(--muted); font-size: 0.9rem; line-height: 1.8; }
-    .values-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .values-list li {
-      display: flex; align-items: center; gap: 10px;
-      color: var(--muted); font-size: 0.9rem;
+
+    .mission h3 {
+      color: #fff;
     }
-    .values-list li i { color: var(--sage); font-size: 0.8rem; }
+
+    .vision h3,
+    .values h3 {
+      color: var(--forest);
+    }
+
+    .mission p {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+
+    .vision p,
+    .values p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+
+    .values-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .values-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .values-list li i {
+      color: var(--sage);
+      font-size: 0.8rem;
+    }
 
     /* ── WHAT WE DO ── */
     .what-we-do {
       background: var(--forest);
       padding: 100px 80px;
-      position: relative; overflow: hidden;
+      position: relative;
+      overflow: hidden;
     }
+
     .what-we-do::after {
       content: '';
-      position: absolute; bottom: -120px; right: -120px;
-      width: 400px; height: 400px;
+      position: absolute;
+      bottom: -120px;
+      right: -120px;
+      width: 400px;
+      height: 400px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(82,183,136,0.07) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(82, 183, 136, 0.07) 0%, transparent 70%);
     }
-    .what-header { max-width: 540px; margin-bottom: 64px; }
-    .what-header .section-title { color: #fff; }
-    .what-header p { color: rgba(255,255,255,0.65); font-size: 0.95rem; line-height: 1.8; }
+
+    .what-header {
+      max-width: 540px;
+      margin-bottom: 64px;
+    }
+
+    .what-header .section-title {
+      color: #fff;
+    }
+
+    .what-header p {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+
     .what-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 2px;
-      border-radius: 4px; overflow: hidden;
+      border-radius: 4px;
+      overflow: hidden;
     }
+
     .what-item {
       padding: 36px 32px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.06);
       transition: background 0.3s;
     }
-    .what-item:hover { background: rgba(255,255,255,0.08); }
+
+    .what-item:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
     .what-num {
       font-family: var(--heading-font);
-      font-size: 2.5rem; font-weight: 700;
-      color: rgba(201,168,76,0.25);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: rgba(201, 168, 76, 0.25);
       line-height: 1;
       margin-bottom: 16px;
     }
+
     .what-item h4 {
-      font-size: 1rem; font-weight: 600;
-      color: #fff; margin-bottom: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 10px;
     }
-    .what-item p { color: rgba(255,255,255,0.55); font-size: 0.85rem; line-height: 1.7; }
+
+    .what-item p {
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 0.85rem;
+      line-height: 1.7;
+    }
 
     /* ── TESTIMONIALS ── */
     .testimonials {
       padding: 100px 80px;
       background: var(--cream);
     }
-    .testimonials-header { text-align: center; max-width: 560px; margin: 0 auto 64px; }
+
+    .testimonials-header {
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto 64px;
+    }
+
     .testimonials-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
+
     .testi-card {
       background: #fff;
       padding: 40px 36px;
       border-radius: 4px;
-      border: 1px solid rgba(0,0,0,0.06);
+      border: 1px solid rgba(0, 0, 0, 0.06);
       position: relative;
       transition: all 0.3s;
     }
-    .testi-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.08); }
+
+    .testi-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+    }
+
     .testi-quote {
-      font-size: 4rem; line-height: 1;
+      font-size: 4rem;
+      line-height: 1;
       font-family: var(--heading-font);
       color: var(--cream);
-      position: absolute; top: 20px; right: 28px;
+      position: absolute;
+      top: 20px;
+      right: 28px;
       user-select: none;
     }
-    .stars { display: flex; gap: 3px; margin-bottom: 20px; }
-    .stars i { color: var(--gold); font-size: 0.75rem; }
+
+    .stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 20px;
+    }
+
+    .stars i {
+      color: var(--gold);
+      font-size: 0.75rem;
+    }
+
     .testi-card blockquote {
-      font-size: 0.9rem; line-height: 1.85;
+      font-size: 0.9rem;
+      line-height: 1.85;
       color: var(--muted);
       margin-bottom: 28px;
       font-style: italic;
     }
-    .testi-author { display: flex; align-items: center; gap: 14px; }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
     .testi-avatar {
-      width: 48px; height: 48px;
-      border-radius: 50%; object-fit: cover;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
       border: 2px solid var(--cream);
     }
+
     .testi-avatar-placeholder {
-      width: 48px; height: 48px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       background: var(--forest);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--gold); font-family: var(--heading-font);
-      font-size: 1.1rem; font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-family: var(--heading-font);
+      font-size: 1.1rem;
+      font-weight: 700;
       flex-shrink: 0;
     }
-    .testi-name { font-weight: 600; color: var(--forest); font-size: 0.9rem; }
-    .testi-role { color: var(--muted); font-size: 0.78rem; margin-top: 2px; }
+
+    .testi-name {
+      font-weight: 600;
+      color: var(--forest);
+      font-size: 0.9rem;
+    }
+
+    .testi-role {
+      color: var(--muted);
+      font-size: 0.78rem;
+      margin-top: 2px;
+    }
 
     /* ── CTA BANNER ── */
     .cta-banner {
       padding: 80px;
       background: linear-gradient(135deg, var(--forest) 0%, var(--leaf) 100%);
-      display: flex; justify-content: space-between; align-items: center; gap: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
     }
-    .cta-banner h2 { font-family: var(--heading-font); font-size: clamp(1.8rem, 3vw, 2.6rem); color: #fff; font-weight: 700; max-width: 560px; line-height: 1.25; }
-    .cta-banner h2 em { font-style: italic; color: var(--gold); }
-    .cta-actions { display: flex; gap: 16px; flex-shrink: 0; }
-    .btn-gold { background: var(--gold); color: var(--forest); padding: 14px 32px; border-radius: 2px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: all 0.25s; }
-    .btn-gold:hover { background: #e0bc62; transform: translateY(-1px); }
-    .btn-white { border: 1.5px solid rgba(255,255,255,0.4); color: #fff; padding: 14px 32px; border-radius: 2px; text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: all 0.25s; }
-    .btn-white:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+
+    .cta-banner h2 {
+      font-family: var(--heading-font);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: #fff;
+      font-weight: 700;
+      max-width: 560px;
+      line-height: 1.25;
+    }
+
+    .cta-banner h2 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--forest);
+      padding: 14px 32px;
+      border-radius: 2px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.25s;
+    }
+
+    .btn-gold:hover {
+      background: #e0bc62;
+      transform: translateY(-1px);
+    }
+
+    .btn-white {
+      border: 1.5px solid rgba(255, 255, 255, 0.4);
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 2px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: all 0.25s;
+    }
+
+    .btn-white:hover {
+      border-color: #fff;
+      background: rgba(255, 255, 255, 0.08);
+    }
 
     /* ── FOOTER ── */
-    footer { background: var(--charcoal); padding: 80px 80px 0; }
-    .footer-grid { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1.4fr; gap: 60px; padding-bottom: 60px; border-bottom: 1px solid rgba(255,255,255,0.08); }
-    .footer-brand img { height: 40px; margin-bottom: 20px; }
-    .footer-brand p { color: rgba(255,255,255,0.5); font-size: 0.875rem; line-height: 1.8; margin-bottom: 28px; }
-    .social-links { display: flex; gap: 12px; }
-    .social-link { width: 36px; height: 36px; background: rgba(255,255,255,0.07); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; transition: all 0.2s; }
-    .social-link:hover { background: var(--sage); color: #fff; }
-    .footer-col h4 { color: #fff; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 24px; }
-    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.875rem; transition: color 0.2s; }
-    .footer-links a:hover { color: var(--sage); }
-    .footer-contact { display: flex; flex-direction: column; gap: 14px; }
-    .contact-item { display: flex; gap: 12px; color: rgba(255,255,255,0.5); font-size: 0.875rem; }
-    .contact-item i { color: var(--sage); margin-top: 2px; flex-shrink: 0; }
-    .contact-item a { color: inherit; text-decoration: none; }
-    .contact-item a:hover { color: var(--sage); }
-    .footer-bottom { padding: 24px 0; display: flex; justify-content: space-between; align-items: center; }
-    .footer-bottom p { color: rgba(255,255,255,0.35); font-size: 0.8rem; }
-    .footer-bottom a { color: var(--sage); text-decoration: none; }
+    footer {
+      background: var(--charcoal);
+      padding: 80px 80px 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1fr 1.4fr;
+      gap: 60px;
+      padding-bottom: 60px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-brand img {
+      height: 40px;
+      margin-bottom: 20px;
+    }
+
+    .footer-brand p {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.875rem;
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-link {
+      width: 36px;
+      height: 36px;
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+
+    .social-link:hover {
+      background: var(--sage);
+      color: #fff;
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--sage);
+    }
+
+    .footer-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 12px;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.875rem;
+    }
+
+    .contact-item i {
+      color: var(--sage);
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .contact-item a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      color: var(--sage);
+    }
+
+    .footer-bottom {
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom p {
+      color: rgba(255, 255, 255, 0.35);
+      font-size: 0.8rem;
+    }
+
+    .footer-bottom a {
+      color: var(--sage);
+      text-decoration: none;
+    }
 
     /* ── PROGRESS BAR ── */
     .reading-progress {
-      position: fixed; top: 0; left: 0; z-index: 200;
-      height: 3px; width: 0%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 200;
+      height: 3px;
+      width: 0%;
       background: linear-gradient(to right, var(--sage), var(--gold));
       transition: width 0.1s linear;
       pointer-events: none;
@@ -326,560 +877,847 @@
     .counters-strip {
       background: var(--offwhite);
       padding: 60px 80px;
-      display: grid; grid-template-columns: repeat(4, 1fr);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
       gap: 0;
-      border-top: 1px solid rgba(0,0,0,0.06);
-      border-bottom: 1px solid rgba(0,0,0,0.06);
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     }
+
     .counter-item {
-      text-align: center; padding: 0 20px;
-      border-right: 1px solid rgba(0,0,0,0.08);
+      text-align: center;
+      padding: 0 20px;
+      border-right: 1px solid rgba(0, 0, 0, 0.08);
     }
-    .counter-item:last-child { border-right: none; }
+
+    .counter-item:last-child {
+      border-right: none;
+    }
+
     .counter-num {
       font-family: var(--heading-font);
-      font-size: 3rem; font-weight: 700;
-      color: var(--forest); line-height: 1;
-      display: flex; justify-content: center; align-items: baseline; gap: 4px;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--forest);
+      line-height: 1;
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      gap: 4px;
     }
-    .counter-num .suffix { font-size: 1.8rem; color: var(--gold); }
-    .counter-label { color: var(--muted); font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 8px; }
+
+    .counter-num .suffix {
+      font-size: 1.8rem;
+      color: var(--gold);
+    }
+
+    .counter-label {
+      color: var(--muted);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 8px;
+    }
 
     /* ── TESTIMONIAL CAROUSEL ── */
-    .testi-carousel-wrap { overflow: hidden; }
-    .testimonials-grid { display: flex; gap: 24px; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); }
-    .testi-card { min-width: calc(33.333% - 16px); flex-shrink: 0; }
+    .testi-carousel-wrap {
+      overflow: hidden;
+    }
+
+    .testimonials-grid {
+      display: flex;
+      gap: 24px;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .testi-card {
+      min-width: calc(33.333% - 16px);
+      flex-shrink: 0;
+    }
+
     .carousel-controls {
-      display: flex; justify-content: center; align-items: center; gap: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
       margin-top: 40px;
     }
+
     .carousel-btn {
-      width: 44px; height: 44px; border-radius: 50%;
-      border: 1.5px solid rgba(0,0,0,0.15);
-      background: #fff; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      color: var(--forest); font-size: 0.85rem;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(0, 0, 0, 0.15);
+      background: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--forest);
+      font-size: 0.85rem;
       transition: all 0.2s;
     }
-    .carousel-btn:hover { background: var(--forest); color: #fff; border-color: var(--forest); }
-    .carousel-dots { display: flex; gap: 8px; }
-    .carousel-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(0,0,0,0.15); cursor: pointer; transition: all 0.3s; }
-    .carousel-dot.active { background: var(--forest); width: 24px; border-radius: 4px; }
+
+    .carousel-btn:hover {
+      background: var(--forest);
+      color: #fff;
+      border-color: var(--forest);
+    }
+
+    .carousel-dots {
+      display: flex;
+      gap: 8px;
+    }
+
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.15);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .carousel-dot.active {
+      background: var(--forest);
+      width: 24px;
+      border-radius: 4px;
+    }
 
     /* ── IMAGE REVEAL ── */
-    .who-img-main { transform: scale(1.06); transition: transform 1.2s ease; }
-    .who-images.revealed .who-img-main { transform: scale(1); }
+    .who-img-main {
+      transform: scale(1.06);
+      transition: transform 1.2s ease;
+    }
+
+    .who-images.revealed .who-img-main {
+      transform: scale(1);
+    }
 
     /* ── CROP TAG TOOLTIPS ── */
-    .crop-tag { position: relative; cursor: default; }
+    .crop-tag {
+      position: relative;
+      cursor: default;
+    }
+
     .crop-tooltip {
-      position: absolute; bottom: calc(100% + 8px); left: 50%;
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
       transform: translateX(-50%) translateY(6px);
-      background: var(--charcoal); color: #fff;
-      font-size: 0.75rem; padding: 6px 12px;
-      border-radius: 4px; white-space: nowrap;
-      opacity: 0; pointer-events: none;
-      transition: all 0.2s; z-index: 10;
+      background: var(--charcoal);
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 6px 12px;
+      border-radius: 4px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.2s;
+      z-index: 10;
     }
+
     .crop-tooltip::after {
-      content: ''; position: absolute; top: 100%; left: 50%;
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
       transform: translateX(-50%);
-      border: 5px solid transparent; border-top-color: var(--charcoal);
+      border: 5px solid transparent;
+      border-top-color: var(--charcoal);
     }
-    .crop-tag:hover .crop-tooltip { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    .crop-tag:hover .crop-tooltip {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
 
     /* ── WHAT-ITEM EXPAND ── */
-    .what-item p { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.4s ease, opacity 0.3s; }
-    .what-item:hover p { max-height: 120px; opacity: 1; }
-    .what-item h4 { display: flex; justify-content: space-between; align-items: center; }
-    .expand-icon { color: var(--gold); font-size: 1.1rem; transition: transform 0.3s; flex-shrink: 0; margin-left: 8px; }
-    .what-item:hover .expand-icon { transform: rotate(45deg); }
+    .what-item p {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.4s ease, opacity 0.3s;
+    }
+
+    .what-item:hover p {
+      max-height: 120px;
+      opacity: 1;
+    }
+
+    .what-item h4 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .expand-icon {
+      color: var(--gold);
+      font-size: 1.1rem;
+      transition: transform 0.3s;
+      flex-shrink: 0;
+      margin-left: 8px;
+    }
+
+    .what-item:hover .expand-icon {
+      transform: rotate(45deg);
+    }
 
     /* ── SCROLL UP ── */
     .scroll-up {
-      position: fixed; bottom: 32px; right: 32px;
-      width: 44px; height: 44px;
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      width: 44px;
+      height: 44px;
       background: var(--forest);
       border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      color: #fff; font-size: 1rem;
-      cursor: pointer; text-decoration: none;
-      opacity: 0; transform: translateY(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      opacity: 0;
+      transform: translateY(10px);
       transition: all 0.3s;
       z-index: 50;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     }
-    .scroll-up.visible { opacity: 1; transform: translateY(0); }
-    .scroll-up:hover { background: var(--leaf); }
+
+    .scroll-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .scroll-up:hover {
+      background: var(--leaf);
+    }
 
     @media (max-width: 900px) {
-      .counters-strip { grid-template-columns: repeat(2,1fr); padding: 40px 32px; }
-      .counter-item:nth-child(2) { border-right: none; }
-      .counter-item:nth-child(3) { border-top: 1px solid rgba(0,0,0,0.08); border-right: 1px solid rgba(0,0,0,0.08); }
-      .testi-card { min-width: 100%; }
+      .counters-strip {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 40px 32px;
+      }
+
+      .counter-item:nth-child(2) {
+        border-right: none;
+      }
+
+      .counter-item:nth-child(3) {
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+        border-right: 1px solid rgba(0, 0, 0, 0.08);
+      }
+
+      .testi-card {
+        min-width: 100%;
+      }
     }
 
     /* ── FADE IN ── */
-    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      nav { padding: 0 24px; }
-      .nav-links { display: none; }
-      .nav-toggle { display: block; }
-      .page-hero-content { padding: 0 32px 48px; }
-      .who-we-are { grid-template-columns: 1fr; padding: 70px 32px; gap: 48px; }
-      .who-img-accent { display: none; }
-      .mvv { grid-template-columns: 1fr; padding: 0 32px 70px; }
-      .what-we-do { padding: 70px 32px; }
-      .what-grid { grid-template-columns: 1fr; }
-      .testimonials { padding: 70px 32px; }
-      .testimonials-grid { grid-template-columns: 1fr; }
-      .cta-banner { flex-direction: column; padding: 60px 32px; text-align: center; }
-      .cta-actions { justify-content: center; }
-      footer { padding: 60px 32px 0; }
-      .footer-grid { grid-template-columns: 1fr; gap: 36px; }
-      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
-      .divider { margin: 0 32px; }
+      nav {
+        padding: 0 24px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .page-hero-content {
+        padding: 0 32px 48px;
+      }
+
+      .who-we-are {
+        grid-template-columns: 1fr;
+        padding: 70px 32px;
+        gap: 48px;
+      }
+
+      .who-img-accent {
+        display: none;
+      }
+
+      .mvv {
+        grid-template-columns: 1fr;
+        padding: 0 32px 70px;
+      }
+
+      .what-we-do {
+        padding: 70px 32px;
+      }
+
+      .what-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .testimonials {
+        padding: 70px 32px;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-banner {
+        flex-direction: column;
+        padding: 60px 32px;
+        text-align: center;
+      }
+
+      .cta-actions {
+        justify-content: center;
+      }
+
+      footer {
+        padding: 60px 32px 0;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+      }
+
+      .divider {
+        margin: 0 32px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<!-- NAV -->
-<nav id="mainNav">
-  <a href="index.html" class="nav-logo">
-    <img src="assets/img/ngite_space_logo.png" alt="Ngite Space">
-    <span>Ngite Space</span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html" class="active">About</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="campaigns.html">Projects</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
-  </ul>
-  <button class="nav-toggle" onclick="toggleMobileMenu()" aria-label="Menu">
-    <i class="fas fa-bars" id="menuIcon"></i>
-  </button>
-</nav>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="services.html">Services</a>
-  <a href="campaigns.html">Projects</a>
-  <a href="blog.html">Blog</a>
-  <a href="contact.html">Contact Us</a>
-</div>
-
-<!-- PAGE HERO -->
-<section class="page-hero">
-  <div class="page-hero-bg" id="heroBg"></div>
-  <div class="page-hero-overlay"></div>
-  <div class="page-hero-content">
-    <ol class="breadcrumb">
-      <li><a href="index.html">Home</a></li>
-      <li class="sep">About Us</li>
-    </ol>
-    <h1>About <em>Ngite Space</em></h1>
-  </div>
-</section>
-
-<!-- Reading Progress Bar -->
-<div class="reading-progress" id="readingProgress"></div>
-
-<!-- WHO WE ARE -->
-<section class="who-we-are">
-  <div class="who-images fade-in">
-    <img src="assets/img/coffee1.jpg" alt="Ngite Space coffee farming" class="who-img-main">
-    <img src="assets/img/export1.jpeg" alt="Cocoa farming" class="who-img-accent">
-  </div>
-  <div class="fade-in">
-    <span class="section-label">Our Story</span>
-    <h2 class="section-title">Who <em>We Are</em></h2>
-    <div class="reg-badge">
-      <i class="fas fa-certificate"></i>
-      Reg. No. 80034879454906 · Uganda
-    </div>
-    <p class="body-text">Ngite Space Limited is an agro-processing and climate change focused company registered under the laws of Uganda, dedicated to fostering sustainable food production and responsible trade in the era of climate change.</p>
-    <p class="body-text">Our business strategy bridges the gap between producers, traders, consumers and climate change activists in the world's food system. We foster collaborations between those who understand the need for responsible production, sourcing, processing and consumption.</p>
-    <p class="body-text">At Ngite Space, we champion cleaner production technologies to guarantee greener value chains. We develop and promote products and services that focus on reducing the environmental impact of agricultural value chains, while ensuring sustainable food security. We also help foreign companies and buyers to sustainably identify and source commodities.</p>
-    <p class="body-text" style="font-weight: 600; color: var(--forest);">Our priority crops and value chains:</p>
-    <div class="priority-crops">
-    <div class="crop-tag">
-        <i class="fas fa-mug-hot"></i> Coffee
-        <span class="crop-tooltip">Arabica & Robusta · Kasese, Bundibugyo</span>
-      </div>
-      <div class="crop-tag">
-        <i class="fas fa-seedling"></i> Cocoa
-        <span class="crop-tooltip">Fine Flavour Cocoa · Western Uganda</span>
-      </div>
-    </div>
-    <p class="body-text">Through collective action, collaborations and community-driven initiatives, we strive to create more sustainable and equitable coffee and cocoa value chains.</p>
-    <br>
-    <a href="services.html" class="btn-primary">Our Services <i class="fas fa-arrow-right"></i></a>
-  </div>
-</section>
-
-<!-- COUNTERS STRIP -->
-<div class="counters-strip">
-  <div class="counter-item fade-in">
-    <div class="counter-num"><span class="counter" data-target="4">0</span><span class="suffix">+</span></div>
-    <div class="counter-label">Years of Experience</div>
-  </div>
-  <div class="counter-item fade-in">
-    <div class="counter-num"><span class="counter" data-target="2">0</span><span class="suffix"> Crops</span></div>
-    <div class="counter-label">Priority Value Chains</div>
-  </div>
-  <div class="counter-item fade-in">
-    <div class="counter-num"><span class="counter" data-target="7">0</span><span class="suffix"></span></div>
-    <div class="counter-label">Key Objectives</div>
-  </div>
-  <div class="counter-item fade-in">
-    <div class="counter-num"><span class="counter" data-target="100">0</span><span class="suffix">%</span></div>
-    <div class="counter-label">Sustainability Focused</div>
-  </div>
-</div>
-
-<!-- MISSION VISION VALUES -->
-<div class="mvv">
-  <div class="mvv-card mission fade-in">
-    <div class="mvv-icon"><i class="fas fa-bullseye"></i></div>
-    <h3>Our Mission</h3>
-    <p>Building climate resilience and adaptive capacity in the world's food system and trade, mainly coffee and cocoa value chains.</p>
-  </div>
-  <div class="mvv-card vision fade-in">
-    <div class="mvv-icon"><i class="fas fa-eye"></i></div>
-    <h3>Our Vision</h3>
-    <p>Inclusive, life-changing and sustainable coffee and cocoa value chains emanating from our environmental action in the agro-food system.</p>
-  </div>
-  <div class="mvv-card values fade-in">
-    <div class="mvv-icon"><i class="fas fa-heart"></i></div>
-    <h3>Our Values</h3>
-    <ul class="values-list">
-      <li><i class="fas fa-check-circle"></i> Sustainability</li>
-      <li><i class="fas fa-check-circle"></i> Collaboration</li>
-      <li><i class="fas fa-check-circle"></i> Trust</li>
-      <li><i class="fas fa-check-circle"></i> Accountability</li>
-    </ul>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- WHAT WE DO -->
-<section class="what-we-do">
-  <div class="what-header fade-in">
-    <span class="section-label" style="color: var(--sage);">Our Work</span>
-    <h2 class="section-title">What We <em>Do</em></h2>
-    <p>We operate across the full spectrum of sustainable agriculture and climate action — from the farm gate to international markets.</p>
-  </div>
-  <div class="what-grid">
-    <div class="what-item fade-in">
-      <div class="what-num">01</div>
-      <h4>Sustainable Sourcing <span class="expand-icon">+</span></h4>
-      <p>Responsibly sourcing coffee and cocoa with full traceability — connecting ethical buyers to verified Ugandan producers.</p>
-    </div>
-    <div class="what-item fade-in">
-      <div class="what-num">02</div>
-      <h4>EUDR Compliance <span class="expand-icon">+</span></h4>
-      <p>Supporting companies in meeting EU Deforestation Regulation requirements through documentation, GIS mapping and risk assessment.</p>
-    </div>
-    <div class="what-item fade-in">
-      <div class="what-num">03</div>
-      <h4>Carbon Accounting <span class="expand-icon">+</span></h4>
-      <p>Helping companies discover and manage their environmental impact through rigorous carbon accounting and sustainability reporting.</p>
-    </div>
-    <div class="what-item fade-in">
-      <div class="what-num">04</div>
-      <h4>Farmer Training <span class="expand-icon">+</span></h4>
-      <p>Training smallholder farmers on climate-smart agriculture, post-harvest handling and value addition technologies.</p>
-    </div>
-    <div class="what-item fade-in">
-      <div class="what-num">05</div>
-      <h4>Climate Adaptation <span class="expand-icon">+</span></h4>
-      <p>Supporting vulnerable farming communities with climate adaptation strategies, resilience building and ecosystem restoration.</p>
-    </div>
-    <div class="what-item fade-in">
-      <div class="what-num">06</div>
-      <h4>Advocacy & Research <span class="expand-icon">+</span></h4>
-      <p>Conducting research and public education on climate change and sustainable agriculture in coffee and cocoa value chains.</p>
-    </div>
-  </div>
-</section>
-
-<div class="divider" style="margin-top: 0;"></div>
-
-<!-- TESTIMONIALS -->
-<section class="testimonials">
-  <div class="testimonials-header fade-in">
-    <span class="section-label">What People Say</span>
-    <h2 class="section-title">Voices That <em>Trust Us</em></h2>
-  </div>
-  <div class="testi-carousel-wrap">
-    <div class="testimonials-grid" id="testiGrid">
-      <div class="testi-card fade-in">
-        <div class="testi-quote">"</div>
-        <div class="stars">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-        </div>
-        <blockquote>I've known Ngite Space to be actively involved in promoting sustainable agricultural practices in cocoa and coffee growing areas to mitigate and adapt to climate change. The company has been embarking on farmer trainings on soil conservation, irrigation and agroforestry, thereby promoting farmer resilience against climate change.</blockquote>
-        <div class="testi-author">
-          <img src="assets/img/test_1.JPG" alt="Mutooro Martin" class="testi-avatar">
-          <div>
-            <div class="testi-name">Mutooro Martin</div>
-            <div class="testi-role">Coffee & Cocoa Stakeholder</div>
-          </div>
-        </div>
-      </div>
-      <div class="testi-card fade-in">
-        <div class="testi-quote">"</div>
-        <div class="stars">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-        </div>
-        <blockquote>I have visited Ngite Space model farms for both cocoa and coffee — providing a learning opportunity in the areas of farming and trade. Ngite Space provides market for cocoa and coffee produced by small holder farmers in districts of Kasese and Bundibugyo, thereby touching farmers' livelihoods.</blockquote>
-        <div class="testi-author">
-          <img src="assets/img/test_2.jpg" alt="Mbabazi Flaviah" class="testi-avatar">
-          <div>
-            <div class="testi-name">Mbabazi Flaviah</div>
-            <div class="testi-role">Environmentalist</div>
-          </div>
-        </div>
-      </div>
-      <div class="testi-card fade-in">
-        <div class="testi-quote">"</div>
-        <div class="stars">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-        </div>
-        <blockquote>The first consignment I bought from Ngite Space was cocoa and its quality told a story of commitment to meeting customer needs and changing lives of farming communities. Their model with climate change activism puts sustainability at the forefront — I'm sure of continued partnership.</blockquote>
-        <div class="testi-author">
-          <img src="assets/img/test_5.JPG" alt="Joylet Musimenta" class="testi-avatar">
-          <div>
-            <div class="testi-name">Joylet Musimenta</div>
-            <div class="testi-role">Cocoa Buyer</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="carousel-controls">
-    <button class="carousel-btn" id="testiPrev"><i class="fas fa-arrow-left"></i></button>
-    <div class="carousel-dots" id="testiDots"></div>
-    <button class="carousel-btn" id="testiNext"><i class="fas fa-arrow-right"></i></button>
-  </div>
-</section>
-
-<!-- CTA -->
-<div class="cta-banner">
-  <h2>Want to partner with us for a <em>greener</em> future?</h2>
-  <div class="cta-actions">
-    <a href="contact.html" class="btn-gold">Get In Touch</a>
-    <a href="services.html" class="btn-white">Our Services</a>
-  </div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
+  <!-- NAV -->
+  <nav id="mainNav">
+    <a href="index.html" class="nav-logo">
       <img src="assets/img/ngite_space_logo.png" alt="Ngite Space">
-      <p>We're committed to blending agribusiness with environmental awareness and action. Join us in making a difference for coffee and cocoa communities across Uganda.</p>
-      <div class="social-links">
-        <a href="https://instagram.com/ngite_space" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://x.com/ngitespace" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4>Quick Links</h4>
-      <ul class="footer-links">
+      <span>Ngite Space</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="campaigns.html">Projects</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="toggleMobileMenu()" aria-label="Menu">
+      <i class="fas fa-bars" id="menuIcon"></i>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="campaigns.html">Projects</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact Us</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-bg" id="heroBg"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <ol class="breadcrumb">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="campaigns.html">Projects</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li class="sep">About Us</li>
+      </ol>
+      <h1>About <em>Ngite Space</em></h1>
+    </div>
+  </section>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress" id="readingProgress"></div>
+
+  <!-- WHO WE ARE -->
+  <section class="who-we-are">
+    <div class="who-images fade-in">
+      <img src="assets/img/coffee1.jpg" alt="Ngite Space coffee farming" class="who-img-main">
+      <img src="assets/img/export1.jpeg" alt="Cocoa farming" class="who-img-accent">
+    </div>
+    <div class="fade-in">
+      <span class="section-label">Our Story</span>
+      <h2 class="section-title">Who <em>We Are</em></h2>
+      <div class="reg-badge">
+        <i class="fas fa-certificate"></i>
+        Reg. No. 80034879454906 · Uganda
+      </div>
+      <p class="body-text">Ngite Space Limited is an agro-processing and climate change focused company registered under
+        the laws of Uganda, dedicated to fostering sustainable food production and responsible trade in the era of
+        climate change.</p>
+      <p class="body-text">Our business strategy bridges the gap between producers, traders, consumers and climate
+        change activists in the world's food system. We foster collaborations between those who understand the need for
+        responsible production, sourcing, processing and consumption.</p>
+      <p class="body-text">At Ngite Space, we champion cleaner production technologies to guarantee greener value
+        chains. We develop and promote products and services that focus on reducing the environmental impact of
+        agricultural value chains, while ensuring sustainable food security. We also help foreign companies and buyers
+        to sustainably identify and source commodities.</p>
+      <p class="body-text" style="font-weight: 600; color: var(--forest);">Our priority crops and value chains:</p>
+      <div class="priority-crops">
+        <div class="crop-tag">
+          <i class="fas fa-mug-hot"></i> Coffee
+          <span class="crop-tooltip">Arabica & Robusta · Kasese, Bundibugyo</span>
+        </div>
+        <div class="crop-tag">
+          <i class="fas fa-seedling"></i> Cocoa
+          <span class="crop-tooltip">Fine Flavour Cocoa · Western Uganda</span>
+        </div>
+      </div>
+      <p class="body-text">Through collective action, collaborations and community-driven initiatives, we strive to
+        create more sustainable and equitable coffee and cocoa value chains.</p>
+      <br>
+      <a href="services.html" class="btn-primary">Our Services <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </section>
+
+  <!-- COUNTERS STRIP -->
+  <div class="counters-strip">
+    <div class="counter-item fade-in">
+      <div class="counter-num"><span class="counter" data-target="4">0</span><span class="suffix">+</span></div>
+      <div class="counter-label">Years of Experience</div>
+    </div>
+    <div class="counter-item fade-in">
+      <div class="counter-num"><span class="counter" data-target="2">0</span><span class="suffix"> Crops</span></div>
+      <div class="counter-label">Priority Value Chains</div>
+    </div>
+    <div class="counter-item fade-in">
+      <div class="counter-num"><span class="counter" data-target="7">0</span><span class="suffix"></span></div>
+      <div class="counter-label">Key Objectives</div>
+    </div>
+    <div class="counter-item fade-in">
+      <div class="counter-num"><span class="counter" data-target="100">0</span><span class="suffix">%</span></div>
+      <div class="counter-label">Sustainability Focused</div>
+    </div>
+  </div>
+
+  <!-- MISSION VISION VALUES -->
+  <div class="mvv">
+    <div class="mvv-card mission fade-in">
+      <div class="mvv-icon"><i class="fas fa-bullseye"></i></div>
+      <h3>Our Mission</h3>
+      <p>Building climate resilience and adaptive capacity in the world's food system and trade, mainly coffee and cocoa
+        value chains.</p>
+    </div>
+    <div class="mvv-card vision fade-in">
+      <div class="mvv-icon"><i class="fas fa-eye"></i></div>
+      <h3>Our Vision</h3>
+      <p>Inclusive, life-changing and sustainable coffee and cocoa value chains emanating from our environmental action
+        in the agro-food system.</p>
+    </div>
+    <div class="mvv-card values fade-in">
+      <div class="mvv-icon"><i class="fas fa-heart"></i></div>
+      <h3>Our Values</h3>
+      <ul class="values-list">
+        <li><i class="fas fa-check-circle"></i> Sustainability</li>
+        <li><i class="fas fa-check-circle"></i> Collaboration</li>
+        <li><i class="fas fa-check-circle"></i> Trust</li>
+        <li><i class="fas fa-check-circle"></i> Accountability</li>
       </ul>
     </div>
-    <div class="footer-col">
-      <h4>Projects</h4>
-      <ul class="footer-links">
-        <li><a href="campaigns.html">Ngite Climate Auditorium</a></li>
-        <li><a href="campaigns.html">Women for Climate</a></li>
-        <li><a href="campaigns.html">Responsible Waste Disposal</a></li>
-        <li><a href="campaigns.html">Food Security Initiative</a></li>
-      </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- WHAT WE DO -->
+  <section class="what-we-do">
+    <div class="what-header fade-in">
+      <span class="section-label" style="color: var(--sage);">Our Work</span>
+      <h2 class="section-title">What We <em>Do</em></h2>
+      <p>We operate across the full spectrum of sustainable agriculture and climate action — from the farm gate to
+        international markets.</p>
     </div>
-    <div class="footer-col">
-      <h4>Contact Us</h4>
-      <div class="footer-contact">
-        <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>P.O Box 188312, Kampala, Uganda</span></div>
-        <div class="contact-item"><i class="fas fa-phone"></i><a href="tel:+256779642488">+256 779 642 488</a></div>
-        <div class="contact-item"><i class="fas fa-envelope"></i><a href="mailto:info@ngitespace.com">info@ngitespace.com</a></div>
+    <div class="what-grid">
+      <div class="what-item fade-in">
+        <div class="what-num">01</div>
+        <h4>Sustainable Sourcing <span class="expand-icon">+</span></h4>
+        <p>Responsibly sourcing coffee and cocoa with full traceability — connecting ethical buyers to verified Ugandan
+          producers.</p>
+      </div>
+      <div class="what-item fade-in">
+        <div class="what-num">02</div>
+        <h4>EUDR Compliance <span class="expand-icon">+</span></h4>
+        <p>Supporting companies in meeting EU Deforestation Regulation requirements through documentation, GIS mapping
+          and risk assessment.</p>
+      </div>
+      <div class="what-item fade-in">
+        <div class="what-num">03</div>
+        <h4>Carbon Accounting <span class="expand-icon">+</span></h4>
+        <p>Helping companies discover and manage their environmental impact through rigorous carbon accounting and
+          sustainability reporting.</p>
+      </div>
+      <div class="what-item fade-in">
+        <div class="what-num">04</div>
+        <h4>Farmer Training <span class="expand-icon">+</span></h4>
+        <p>Training smallholder farmers on climate-smart agriculture, post-harvest handling and value addition
+          technologies.</p>
+      </div>
+      <div class="what-item fade-in">
+        <div class="what-num">05</div>
+        <h4>Climate Adaptation <span class="expand-icon">+</span></h4>
+        <p>Supporting vulnerable farming communities with climate adaptation strategies, resilience building and
+          ecosystem restoration.</p>
+      </div>
+      <div class="what-item fade-in">
+        <div class="what-num">06</div>
+        <h4>Advocacy & Research <span class="expand-icon">+</span></h4>
+        <p>Conducting research and public education on climate change and sustainable agriculture in coffee and cocoa
+          value chains.</p>
       </div>
     </div>
+  </section>
+
+  <div class="divider" style="margin-top: 0;"></div>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="testimonials-header fade-in">
+      <span class="section-label">What People Say</span>
+      <h2 class="section-title">Voices That <em>Trust Us</em></h2>
+    </div>
+    <div class="testi-carousel-wrap">
+      <div class="testimonials-grid" id="testiGrid">
+        <div class="testi-card fade-in">
+          <div class="testi-quote">"</div>
+          <div class="stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <blockquote>I've known Ngite Space to be actively involved in promoting sustainable agricultural practices in
+            cocoa and coffee growing areas to mitigate and adapt to climate change. The company has been embarking on
+            farmer trainings on soil conservation, irrigation and agroforestry, thereby promoting farmer resilience
+            against climate change.</blockquote>
+          <div class="testi-author">
+            <img src="assets/img/test_1.JPG" alt="Mutooro Martin" class="testi-avatar">
+            <div>
+              <div class="testi-name">Mutooro Martin</div>
+              <div class="testi-role">Coffee & Cocoa Stakeholder</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card fade-in">
+          <div class="testi-quote">"</div>
+          <div class="stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <blockquote>I have visited Ngite Space model farms for both cocoa and coffee — providing a learning
+            opportunity in the areas of farming and trade. Ngite Space provides market for cocoa and coffee produced by
+            small holder farmers in districts of Kasese and Bundibugyo, thereby touching farmers' livelihoods.
+          </blockquote>
+          <div class="testi-author">
+            <img src="assets/img/test_2.jpg" alt="Mbabazi Flaviah" class="testi-avatar">
+            <div>
+              <div class="testi-name">Mbabazi Flaviah</div>
+              <div class="testi-role">Environmentalist</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card fade-in">
+          <div class="testi-quote">"</div>
+          <div class="stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <blockquote>The first consignment I bought from Ngite Space was cocoa and its quality told a story of
+            commitment to meeting customer needs and changing lives of farming communities. Their model with climate
+            change activism puts sustainability at the forefront — I'm sure of continued partnership.</blockquote>
+          <div class="testi-author">
+            <img src="assets/img/test_5.JPG" alt="Joylet Musimenta" class="testi-avatar">
+            <div>
+              <div class="testi-name">Joylet Musimenta</div>
+              <div class="testi-role">Cocoa Buyer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-controls">
+      <button class="carousel-btn" id="testiPrev"><i class="fas fa-arrow-left"></i></button>
+      <div class="carousel-dots" id="testiDots"></div>
+      <button class="carousel-btn" id="testiNext"><i class="fas fa-arrow-right"></i></button>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <h2>Want to partner with us for a <em>greener</em> future?</h2>
+    <div class="cta-actions">
+      <a href="contact.html" class="btn-gold">Get In Touch</a>
+      <a href="services.html" class="btn-white">Our Services</a>
+    </div>
   </div>
-  <div class="footer-bottom">
-    <p>© <span id="year"></span> Ngite Space Limited. All rights reserved.</p>
-    <p>Developed by <a href="https://mutooro.xyz" target="_blank">Mutooro</a></p>
-  </div>
-</footer>
 
-<!-- Scroll Up -->
-<a href="#" class="scroll-up" id="scrollUp"><i class="fas fa-arrow-up"></i></a>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/img/ngite_space_logo.png" alt="Ngite Space">
+        <p>We're committed to blending agribusiness with environmental awareness and action. Join us in making a
+          difference for coffee and cocoa communities across Uganda.</p>
+        <div class="social-links">
+          <a href="https://instagram.com/ngite_space" class="social-link" target="_blank"><i
+              class="fab fa-instagram"></i></a>
+          <a href="https://x.com/ngitespace" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="campaigns.html">Projects</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Projects</h4>
+        <ul class="footer-links">
+          <li><a href="campaigns.html">Ngite Climate Auditorium</a></li>
+          <li><a href="campaigns.html">Women for Climate</a></li>
+          <li><a href="campaigns.html">Responsible Waste Disposal</a></li>
+          <li><a href="campaigns.html">Food Security Initiative</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact">
+          <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>P.O Box 188312, Kampala, Uganda</span>
+          </div>
+          <div class="contact-item"><i class="fas fa-phone"></i><a href="tel:+256779642488">+256 779 642 488</a></div>
+          <div class="contact-item"><i class="fas fa-envelope"></i><a
+              href="mailto:info@ngitespace.com">info@ngitespace.com</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Ngite Space Limited. All rights reserved.</p>
+      <p>Developed by <a href="https://mutooro.xyz" target="_blank">Mutooro</a></p>
+    </div>
+  </footer>
 
-<!-- Chatbase Widget -->
-<script>
-  window.chatbaseConfig = { chatbotId: "YOUR_CHATBOT_ID_HERE" }
-</script>
-<script src="https://www.chatbase.co/embed.min.js" id="YOUR_CHATBOT_ID_HERE" defer></script>
+  <!-- Scroll Up -->
+  <a href="#" class="scroll-up" id="scrollUp"><i class="fas fa-arrow-up"></i></a>
 
-<script>
-  // ── NAV SCROLL ──
-  const nav = document.getElementById('mainNav');
-  const scrollUpBtn = document.getElementById('scrollUp');
-  const progressBar = document.getElementById('readingProgress');
+  <!-- Chatbase Widget -->
+  <script>
+    window.chatbaseConfig = { chatbotId: "YOUR_CHATBOT_ID_HERE" }
+  </script>
+  <script src="https://www.chatbase.co/embed.min.js" id="YOUR_CHATBOT_ID_HERE" defer></script>
 
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    nav.classList.toggle('scrolled', scrollY > 60);
-    scrollUpBtn.classList.toggle('visible', scrollY > 400);
+  <script>
+    // ── NAV SCROLL ──
+    const nav = document.getElementById('mainNav');
+    const scrollUpBtn = document.getElementById('scrollUp');
+    const progressBar = document.getElementById('readingProgress');
 
-    // Reading progress bar
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    progressBar.style.width = ((scrollY / docHeight) * 100) + '%';
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      nav.classList.toggle('scrolled', scrollY > 60);
+      scrollUpBtn.classList.toggle('visible', scrollY > 400);
 
-    // Parallax hero text
-    const heroBg = document.getElementById('heroBg');
-    if (heroBg) heroBg.style.transform = `translateY(${scrollY * 0.25}px)`;
-  });
+      // Reading progress bar
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.width = ((scrollY / docHeight) * 100) + '%';
 
-  // ── MOBILE MENU ──
-  function toggleMobileMenu() {
-    const menu = document.getElementById('mobileMenu');
-    const icon = document.getElementById('menuIcon');
-    menu.classList.toggle('open');
-    icon.className = menu.classList.contains('open') ? 'fas fa-times' : 'fas fa-bars';
-  }
+      // Parallax hero text
+      const heroBg = document.getElementById('heroBg');
+      if (heroBg) heroBg.style.transform = `translateY(${scrollY * 0.25}px)`;
+    });
 
-  // ── HERO BG ZOOM ──
-  setTimeout(() => document.getElementById('heroBg').classList.add('loaded'), 100);
-
-  // ── ANIMATED COUNTERS ──
-  function animateCounter(el) {
-    const target = parseInt(el.dataset.target);
-    const duration = 1800;
-    const start = performance.now();
-    const easeOut = t => 1 - Math.pow(1 - t, 3);
-    function step(now) {
-      const progress = Math.min((now - start) / duration, 1);
-      el.textContent = Math.floor(easeOut(progress) * target);
-      if (progress < 1) requestAnimationFrame(step);
-      else el.textContent = target;
+    // ── MOBILE MENU ──
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const icon = document.getElementById('menuIcon');
+      menu.classList.toggle('open');
+      icon.className = menu.classList.contains('open') ? 'fas fa-times' : 'fas fa-bars';
     }
-    requestAnimationFrame(step);
-  }
 
-  // ── INTERSECTION OBSERVER (fade-in + counters + image reveal) ──
-  const countersDone = new Set();
+    // ── HERO BG ZOOM ──
+    setTimeout(() => document.getElementById('heroBg').classList.add('loaded'), 100);
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (!entry.isIntersecting) return;
+    // ── ANIMATED COUNTERS ──
+    function animateCounter(el) {
+      const target = parseInt(el.dataset.target);
+      const duration = 1800;
+      const start = performance.now();
+      const easeOut = t => 1 - Math.pow(1 - t, 3);
+      function step(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        el.textContent = Math.floor(easeOut(progress) * target);
+        if (progress < 1) requestAnimationFrame(step);
+        else el.textContent = target;
+      }
+      requestAnimationFrame(step);
+    }
 
-      // Fade-in stagger
-      if (entry.target.classList.contains('fade-in')) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+    // ── INTERSECTION OBSERVER (fade-in + counters + image reveal) ──
+    const countersDone = new Set();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (!entry.isIntersecting) return;
+
+        // Fade-in stagger
+        if (entry.target.classList.contains('fade-in')) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        }
+
+        // Image reveal
+        if (entry.target.classList.contains('who-images')) {
+          entry.target.classList.add('revealed');
+        }
+
+        // Counters
+        if (entry.target.classList.contains('counters-strip')) {
+          if (countersDone.has('done')) return;
+          countersDone.add('done');
+          entry.target.querySelectorAll('.counter').forEach((el, idx) => {
+            setTimeout(() => animateCounter(el), idx * 150);
+          });
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in, .who-images, .counters-strip').forEach(el => observer.observe(el));
+
+    // ── TESTIMONIAL CAROUSEL (works on desktop AND mobile) ──
+    const grid = document.getElementById('testiGrid');
+    const cards = Array.from(grid.querySelectorAll('.testi-card'));
+    const dotsContainer = document.getElementById('testiDots');
+    const prevBtn = document.getElementById('testiPrev');
+    const nextBtn = document.getElementById('testiNext');
+    const total = cards.length;
+    let currentSlide = 0;
+    let autoSlideTimer;
+    let isPaused = false;
+
+    // Build dots
+    cards.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', `Testimonial ${i + 1}`);
+      dot.onclick = () => { goToSlide(i); resetAutoSlide(); };
+      dotsContainer.appendChild(dot);
+    });
+
+    function goToSlide(n) {
+      currentSlide = ((n % total) + total) % total;
+      const isMobile = window.innerWidth <= 900;
+
+      if (isMobile) {
+        // Mobile: slide one full-width card at a time
+        grid.style.transform = `translateX(-${currentSlide * 100}%)`;
+      } else {
+        // Desktop: center the active card by shifting the row
+        // Each card is ~33.333% wide. We shift so the active card is visually centered.
+        // For 3 cards: slide 0 => 0%, slide 1 => shift left by one card, slide 2 => shift left by two cards
+        const cardWidthPercent = 100 / 3;
+        const offset = currentSlide * (cardWidthPercent + 2); // +2 accounts for gap
+        grid.style.transform = `translateX(-${offset}%)`;
       }
 
-      // Image reveal
-      if (entry.target.classList.contains('who-images')) {
-        entry.target.classList.add('revealed');
-      }
+      // Update dots
+      dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) =>
+        d.classList.toggle('active', i === currentSlide)
+      );
 
-      // Counters
-      if (entry.target.classList.contains('counters-strip')) {
-        if (countersDone.has('done')) return;
-        countersDone.add('done');
-        entry.target.querySelectorAll('.counter').forEach((el, idx) => {
-          setTimeout(() => animateCounter(el), idx * 150);
+      // Highlight active card (desktop only — dim the others)
+      if (!isMobile) {
+        cards.forEach((c, i) => {
+          if (i === currentSlide) {
+            c.classList.add('active-card');
+            c.classList.remove('dimmed');
+          } else {
+            c.classList.add('dimmed');
+            c.classList.remove('active-card');
+          }
         });
+      } else {
+        cards.forEach(c => { c.classList.remove('dimmed', 'active-card'); });
       }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.fade-in, .who-images, .counters-strip').forEach(el => observer.observe(el));
-
-  // ── TESTIMONIAL CAROUSEL ──
-  const grid = document.getElementById('testiGrid');
-  const cards = grid.querySelectorAll('.testi-card');
-  const dotsContainer = document.getElementById('testiDots');
-  let currentSlide = 0;
-  let autoSlide;
-  const total = cards.length;
-
-  // Build dots
-  cards.forEach((_, i) => {
-    const dot = document.createElement('div');
-    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-    dot.onclick = () => goToSlide(i);
-    dotsContainer.appendChild(dot);
-  });
-
-  function goToSlide(n) {
-    currentSlide = (n + total) % total;
-    const cardWidth = cards[0].getBoundingClientRect().width + 24; // gap
-    const isMobile = window.innerWidth <= 900;
-    grid.style.transform = isMobile
-      ? `translateX(-${currentSlide * (cardWidth)}px)`
-      : currentSlide === 0 ? 'translateX(0)' : 'translateX(0)'; // desktop shows all 3
-    if (isMobile) grid.style.transform = `translateX(-${currentSlide * 100}%)`;
-    dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => d.classList.toggle('active', i === currentSlide));
-    // Highlight active card
-    cards.forEach((c, i) => {
-      c.style.opacity = '1';
-      c.style.transform = 'none';
-    });
-  }
-
-  // Mobile-only sliding
-  function updateCarousel() {
-    if (window.innerWidth <= 900) {
-      grid.style.transform = `translateX(-${currentSlide * 100}%)`;
-    } else {
-      grid.style.transform = 'translateX(0)';
     }
-  }
 
-  document.getElementById('testiPrev').onclick = () => { goToSlide(currentSlide - 1); updateCarousel(); resetAutoSlide(); };
-  document.getElementById('testiNext').onclick = () => { goToSlide(currentSlide + 1); updateCarousel(); resetAutoSlide(); };
-  window.addEventListener('resize', updateCarousel);
+    // Prev / Next buttons
+    prevBtn.onclick = () => { goToSlide(currentSlide - 1); resetAutoSlide(); };
+    nextBtn.onclick = () => { goToSlide(currentSlide + 1); resetAutoSlide(); };
 
-  // Auto-advance on mobile
-  function startAutoSlide() {
-    autoSlide = setInterval(() => {
-      if (window.innerWidth <= 900) {
-        goToSlide(currentSlide + 1);
-        updateCarousel();
+    // Responsive reset
+    window.addEventListener('resize', () => goToSlide(currentSlide));
+
+    // Auto-advance every 5s
+    function startAutoSlide() {
+      autoSlideTimer = setInterval(() => {
+        if (!isPaused) goToSlide(currentSlide + 1);
+      }, 5000);
+    }
+    function resetAutoSlide() { clearInterval(autoSlideTimer); startAutoSlide(); }
+    startAutoSlide();
+
+    // Pause on hover
+    const testiSection = document.querySelector('.testimonials');
+    testiSection.addEventListener('mouseenter', () => { isPaused = true; });
+    testiSection.addEventListener('mouseleave', () => { isPaused = false; });
+
+    // Touch / swipe support
+    let touchStartX = 0;
+    let touchStartTime = 0;
+    grid.addEventListener('touchstart', e => {
+      touchStartX = e.touches[0].clientX;
+      touchStartTime = Date.now();
+    }, { passive: true });
+    grid.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      const elapsed = Date.now() - touchStartTime;
+      // Quick swipe threshold
+      if (Math.abs(diff) > 40 && elapsed < 500) {
+        diff > 0 ? goToSlide(currentSlide + 1) : goToSlide(currentSlide - 1);
+        resetAutoSlide();
       }
-    }, 4000);
-  }
-  function resetAutoSlide() { clearInterval(autoSlide); startAutoSlide(); }
-  startAutoSlide();
+    });
 
-  // Touch/swipe on carousel
-  let touchStartX = 0;
-  grid.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
-  grid.addEventListener('touchend', e => {
-    const diff = touchStartX - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 50) { diff > 0 ? goToSlide(currentSlide + 1) : goToSlide(currentSlide - 1); updateCarousel(); }
-  });
+    // Keyboard: arrow keys when carousel is in view
+    document.addEventListener('keydown', (e) => {
+      const rect = testiSection.getBoundingClientRect();
+      const inView = rect.top < window.innerHeight && rect.bottom > 0;
+      if (!inView) return;
+      if (e.key === 'ArrowLeft') { goToSlide(currentSlide - 1); resetAutoSlide(); }
+      if (e.key === 'ArrowRight') { goToSlide(currentSlide + 1); resetAutoSlide(); }
+    });
 
-  // ── YEAR ──
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+    // Initialize active state
+    goToSlide(0);
+
+    // ── YEAR ──
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
+
 </html>

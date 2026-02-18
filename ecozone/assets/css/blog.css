@@ -1,0 +1,31 @@
+/* Blog-specific tweaks */
+.cs_post_img{
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  display:block;
+  border-radius:8px;
+}
+@media (max-width: 991px){
+  .cs_post_img{ height:220px; }
+}
+.cs_post_thumb{ display:block; overflow:hidden; border-radius:8px; }
+.cs_post_info{ padding:20px; background: #fff; border-radius:8px; margin-top:-60px; position:relative; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+.cs_post:hover .cs_post_img{ transform: scale(1.03); transition: transform .4s ease; }
+.cs_post_title a{ color: var(--heading-color); }
+/* improve blog section spacing */
+.cs_section_heading.cs_style_1 h2{ margin-bottom:10px; }
+
+/* Accessibility: visible skip link on focus */
+.skip-link{
+  position: absolute;
+  left: 10px;
+  top: -60px;
+  background: var(--heading-color);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  z-index: 9999;
+  transition: top 0.18s ease;
+}
+.skip-link:focus{ top: 10px; }
