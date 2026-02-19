@@ -573,107 +573,194 @@
       line-height: 1.7;
     }
 
-    /* ── TESTIMONIALS ── */
+    /* ── TESTIMONIALS (Refined) ── */
     .testimonials {
       padding: 100px 80px;
-      background: var(--cream);
+      overflow: hidden;
+      background: #f9f9f9;
     }
 
     .testimonials-header {
       text-align: center;
-      max-width: 560px;
-      margin: 0 auto 64px;
+      margin-bottom: 60px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .testimonials-header .section-title {
+      position: relative;
+      display: inline-block;
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+    }
+
+    .testimonials-header .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--gold);
+    }
+
+    .testi-carousel-wrap {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      z-index: 2;
     }
 
     .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      display: flex;
+      gap: 30px;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .testi-card {
+      min-width: calc(33.333% - 20px);
       background: #fff;
-      padding: 40px 36px;
-      border-radius: 4px;
-      border: 1px solid rgba(0, 0, 0, 0.06);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+      display: flex;
+      flex-direction: column;
       position: relative;
-      transition: all 0.3s;
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 1px solid rgba(0, 0, 0, 0.03);
     }
 
     .testi-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
     }
 
-    .testi-quote {
-      font-size: 4rem;
+    .testi-quote-icon {
+      font-size: 40px;
+      color: rgba(201, 168, 76, 0.4);
+      margin-bottom: 24px;
+      font-family: serif;
       line-height: 1;
-      font-family: var(--heading-font);
-      color: var(--cream);
-      position: absolute;
-      top: 20px;
-      right: 28px;
-      user-select: none;
-    }
-
-    .stars {
-      display: flex;
-      gap: 3px;
-      margin-bottom: 20px;
-    }
-
-    .stars i {
-      color: var(--gold);
-      font-size: 0.75rem;
     }
 
     .testi-card blockquote {
-      font-size: 0.9rem;
-      line-height: 1.85;
-      color: var(--muted);
-      margin-bottom: 28px;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #555;
       font-style: italic;
+      margin-bottom: 30px;
+      flex-grow: 1;
+      font-family: var(--body-font);
     }
 
     .testi-author {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
+      padding-top: 24px;
+      border-top: 1px solid #f0f0f0;
     }
 
     .testi-avatar {
-      width: 48px;
-      height: 48px;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
       object-fit: cover;
-      border: 2px solid var(--cream);
+      border: 2px solid var(--gold);
+      padding: 3px;
+      background: #fff;
     }
 
-    .testi-avatar-placeholder {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: var(--forest);
+    .testi-info {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--gold);
-      font-family: var(--heading-font);
-      font-size: 1.1rem;
-      font-weight: 700;
-      flex-shrink: 0;
+      flex-direction: column;
     }
 
     .testi-name {
-      font-weight: 600;
-      color: var(--forest);
-      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      font-size: 1rem;
+      margin-bottom: 2px;
     }
 
     .testi-role {
+      font-size: 0.85rem;
       color: var(--muted);
-      font-size: 0.78rem;
+      font-weight: 500;
+    }
+
+    .testi-org {
+      font-size: 0.75rem;
+      color: var(--sage);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
       margin-top: 2px;
+    }
+
+    /* Dots & Controls */
+    .carousel-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-top: 50px;
+    }
+
+    .carousel-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      color: var(--forest);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .carousel-btn:hover {
+      background: var(--forest);
+      color: #fff;
+      border-color: var(--forest);
+    }
+
+    .carousel-dots {
+      display: flex;
+      gap: 8px;
+    }
+
+    .carousel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ccc;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .carousel-dot.active {
+      background: var(--gold);
+      transform: scale(1.3);
+    }
+
+    @media (max-width: 900px) {
+      .testimonials {
+        padding: 60px 24px;
+      }
+
+      .testi-card {
+        min-width: 100%;
+      }
+
+      .testimonials-grid {
+        gap: 0;
+      }
     }
 
     /* ── CTA BANNER ── */
@@ -1393,63 +1480,59 @@
   <div class="divider" style="margin-top: 0;"></div>
 
   <!-- TESTIMONIALS -->
+  <!-- TESTIMONIALS -->
   <section class="testimonials">
     <div class="testimonials-header fade-in">
-      <span class="section-label">What People Say</span>
-      <h2 class="section-title">Voices That <em>Trust Us</em></h2>
+      <h2 class="section-title">What Our Clients Say</h2>
+      <p style="margin: 0 auto; max-width: 600px; color: #777; font-size: 0.95rem; line-height: 1.6;">Discover why
+        businesses trust Ngite Space to lead their sustainability and climate resilience journeys.</p>
     </div>
     <div class="testi-carousel-wrap">
       <div class="testimonials-grid" id="testiGrid">
+        <!-- Card 1 -->
         <div class="testi-card fade-in">
-          <div class="testi-quote">"</div>
-          <div class="stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-              class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
+          <div class="testi-quote-icon"><i class="fas fa-quote-left"></i></div>
           <blockquote>I've known Ngite Space to be actively involved in promoting sustainable agricultural practices in
             cocoa and coffee growing areas to mitigate and adapt to climate change. The company has been embarking on
             farmer trainings on soil conservation, irrigation and agroforestry, thereby promoting farmer resilience
             against climate change.</blockquote>
           <div class="testi-author">
             <img src="assets/img/test_1.JPG" alt="Mutooro Martin" class="testi-avatar">
-            <div>
+            <div class="testi-info">
               <div class="testi-name">Mutooro Martin</div>
               <div class="testi-role">Coffee & Cocoa Stakeholder</div>
+              <div class="testi-org">Kasese District</div>
             </div>
           </div>
         </div>
+        <!-- Card 2 -->
         <div class="testi-card fade-in">
-          <div class="testi-quote">"</div>
-          <div class="stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-              class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
+          <div class="testi-quote-icon"><i class="fas fa-quote-left"></i></div>
           <blockquote>I have visited Ngite Space model farms for both cocoa and coffee — providing a learning
             opportunity in the areas of farming and trade. Ngite Space provides market for cocoa and coffee produced by
             small holder farmers in districts of Kasese and Bundibugyo, thereby touching farmers' livelihoods.
           </blockquote>
           <div class="testi-author">
             <img src="assets/img/test_2.jpg" alt="Mbabazi Flaviah" class="testi-avatar">
-            <div>
+            <div class="testi-info">
               <div class="testi-name">Mbabazi Flaviah</div>
               <div class="testi-role">Environmentalist</div>
+              <div class="testi-org">Green Watch</div>
             </div>
           </div>
         </div>
+        <!-- Card 3 -->
         <div class="testi-card fade-in">
-          <div class="testi-quote">"</div>
-          <div class="stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-              class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
+          <div class="testi-quote-icon"><i class="fas fa-quote-left"></i></div>
           <blockquote>The first consignment I bought from Ngite Space was cocoa and its quality told a story of
             commitment to meeting customer needs and changing lives of farming communities. Their model with climate
             change activism puts sustainability at the forefront — I'm sure of continued partnership.</blockquote>
           <div class="testi-author">
             <img src="assets/img/test_5.JPG" alt="Joylet Musimenta" class="testi-avatar">
-            <div>
+            <div class="testi-info">
               <div class="testi-name">Joylet Musimenta</div>
               <div class="testi-role">Cocoa Buyer</div>
+              <div class="testi-org">Global Trading Ltd</div>
             </div>
           </div>
         </div>
