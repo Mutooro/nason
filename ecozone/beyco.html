@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BEYCO Platform | Ngite Space Limited</title>
+  <link rel="icon" href="assets/img/ngite_space_logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --forest: #1a3d2b;
+      --leaf: #2d6a4f;
+      --sage: #52b788;
+      --gold: #c9a84c;
+      --cream: #f5f0e8;
+      --offwhite: #faf8f4;
+      --charcoal: #1c1c1c;
+      --muted: #6b7a6e;
+      --heading-font: 'Playfair Display', serif;
+      --body-font: 'DM Sans', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--body-font); color: var(--charcoal); background: var(--offwhite); overflow-x: hidden; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 0 48px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+      background: rgba(26,61,43,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+      transition: all 0.3s;
+    }
+    nav.scrolled { height: 64px; box-shadow: 0 4px 30px rgba(0,0,0,0.2); }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo img { height: 36px; }
+    .nav-logo span { font-family: var(--heading-font); font-size: 1.1rem; color: #fff; }
+    .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.875rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; position: relative; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 100%; height: 1px; background: var(--gold); transition: right 0.3s; }
+    .nav-links a:hover, .nav-links a.active { color: #fff; }
+    .nav-links a:hover::after, .nav-links a.active::after { right: 0; }
+    .nav-cta { background: var(--gold); color: var(--forest) !important; padding: 8px 20px; border-radius: 2px; font-weight: 600 !important; }
+    .nav-cta::after { display: none !important; }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; color: #fff; font-size: 1.4rem; }
+    .mobile-menu { display: none; position: fixed; top: 72px; left: 0; right: 0; background: var(--forest); padding: 24px 32px 32px; flex-direction: column; gap: 20px; border-top: 1px solid rgba(201,168,76,0.2); z-index: 99; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 1rem; font-weight: 500; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      position: relative; height: 460px;
+      display: flex; align-items: flex-end;
+      overflow: hidden; margin-top: 72px;
+    }
+    .page-hero-bg {
+      position: absolute; inset: 0;
+      background: url('assets/img/cocoabg.webp') center/cover no-repeat;
+      transform: scale(1.05); transition: transform 8s ease;
+    }
+    .page-hero-bg.loaded { transform: scale(1); }
+    .page-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(26,61,43,0.95) 0%, rgba(26,61,43,0.4) 60%, rgba(0,0,0,0.1) 100%);
+    }
+    .page-hero-content { position: relative; z-index: 2; padding: 0 80px 64px; width: 100%; }
+    .breadcrumb { display: flex; gap: 8px; align-items: center; list-style: none; margin-bottom: 16px; }
+    .breadcrumb li { color: rgba(255,255,255,0.5); font-size: 0.8rem; }
+    .breadcrumb li a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb li a:hover { color: var(--gold); }
+    .breadcrumb li.sep::before { content: '/'; margin-right: 8px; }
+    .page-hero h1 { font-family: var(--heading-font); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; color: #fff; line-height: 1.15; }
+    .page-hero h1 em { font-style: italic; color: var(--gold); }
+
+    /* ── SHARED ── */
+    .section-label { display: inline-block; color: var(--sage); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px; }
+    .section-title { font-family: var(--heading-font); font-size: clamp(1.9rem, 3vw, 2.8rem); font-weight: 700; color: var(--forest); line-height: 1.25; margin-bottom: 24px; }
+    .section-title em { font-style: italic; color: var(--gold); }
+    .body-text { color: var(--muted); line-height: 1.85; font-size: 0.95rem; margin-bottom: 16px; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: var(--forest); padding: 14px 32px; font-weight: 600; font-size: 0.9rem; text-decoration: none; border-radius: 2px; transition: all 0.25s; }
+    .btn-primary:hover { background: #e0bc62; transform: translateY(-1px); }
+    .divider { height: 1px; background: linear-gradient(to right, transparent, rgba(82,183,136,0.3), transparent); margin: 0 80px; }
+
+    /* ── WHO WE ARE (reused for "What is BEYCO") ── */
+    .who-we-are { padding: 100px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .who-images { position: relative; }
+    .who-img-main { width: 100%; height: 560px; object-fit: cover; border-radius: 4px; }
+    .who-img-accent { position: absolute; bottom: -32px; right: -32px; width: 200px; height: 200px; object-fit: cover; border-radius: 4px; border: 6px solid var(--offwhite); box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
+    .reg-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--cream); border: 1px solid rgba(82,183,136,0.3); color: var(--forest); padding: 10px 16px; border-radius: 4px; font-size: 0.8rem; font-weight: 600; margin-bottom: 28px; }
+    .reg-badge i { color: var(--sage); }
+    .priority-crops { display: flex; gap: 12px; margin: 28px 0; }
+    .crop-tag { display: flex; align-items: center; gap: 8px; padding: 12px 20px; background: var(--forest); color: #fff; border-radius: 4px; font-size: 0.875rem; font-weight: 500; }
+    .crop-tag i { color: var(--gold); }
+
+    /* ── MISSION VISION VALUES (reused for BEYCO key cards) ── */
+    .mvv { padding: 0 80px 100px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .mvv-card { padding: 40px 36px; border-radius: 4px; position: relative; overflow: hidden; }
+    .mvv-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; }
+    .mvv-card.mission { background: var(--forest); }
+    .mvv-card.mission::before { background: var(--gold); }
+    .mvv-card.vision { background: var(--cream); border: 1px solid rgba(0,0,0,0.06); }
+    .mvv-card.vision::before { background: var(--sage); }
+    .mvv-card.values { background: var(--cream); border: 1px solid rgba(0,0,0,0.06); }
+    .mvv-card.values::before { background: var(--leaf); }
+    .mvv-icon { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-bottom: 20px; }
+    .mission .mvv-icon { background: rgba(255,255,255,0.1); color: var(--gold); }
+    .vision .mvv-icon, .values .mvv-icon { background: var(--offwhite); color: var(--leaf); }
+    .mvv-card h3 { font-family: var(--heading-font); font-size: 1.3rem; font-weight: 700; margin-bottom: 16px; }
+    .mission h3 { color: #fff; }
+    .vision h3, .values h3 { color: var(--forest); }
+    .mission p { color: rgba(255,255,255,0.75); font-size: 0.9rem; line-height: 1.8; }
+    .vision p, .values p { color: var(--muted); font-size: 0.9rem; line-height: 1.8; }
+
+    /* ── WHAT WE DO (reused for "Why BEYCO") ── */
+    .what-we-do { background: var(--forest); padding: 100px 80px; position: relative; overflow: hidden; }
+    .what-we-do::after { content: ''; position: absolute; bottom: -120px; right: -120px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(82,183,136,0.07) 0%, transparent 70%); }
+    .what-header { max-width: 540px; margin-bottom: 64px; }
+    .what-header .section-title { color: #fff; }
+    .what-header p { color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.8; }
+    .what-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; border-radius: 4px; overflow: hidden; }
+    .what-item { padding: 36px 32px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); transition: background 0.3s; }
+    .what-item:hover { background: rgba(255,255,255,0.08); }
+    .what-num { font-family: var(--heading-font); font-size: 2.5rem; font-weight: 700; color: rgba(201,168,76,0.2); line-height: 1; margin-bottom: 16px; }
+    .what-item h4 { display: flex; justify-content: space-between; align-items: center; font-size: 1rem; font-weight: 600; color: #fff; margin-bottom: 10px; }
+    .expand-icon { color: var(--gold); font-size: 1.1rem; transition: transform 0.3s; flex-shrink: 0; margin-left: 8px; }
+    .what-item:hover .expand-icon { transform: rotate(45deg); }
+    .what-item p { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.4s ease, opacity 0.3s; color: rgba(255,255,255,0.55); font-size: 0.85rem; line-height: 1.7; }
+    .what-item:hover p { max-height: 120px; opacity: 1; }
+
+    /* ── COUNTERS STRIP ── */
+    .counters-strip { background: var(--offwhite); padding: 60px 80px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid rgba(0,0,0,0.06); border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .counter-item { text-align: center; padding: 0 20px; border-right: 1px solid rgba(0,0,0,0.08); }
+    .counter-item:last-child { border-right: none; }
+    .counter-num { font-family: var(--heading-font); font-size: 3rem; font-weight: 700; color: var(--forest); line-height: 1; display: flex; justify-content: center; align-items: baseline; gap: 4px; }
+    .counter-num .suffix { font-size: 1.8rem; color: var(--gold); }
+    .counter-label { color: var(--muted); font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 8px; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials { background: var(--forest); padding: 100px 80px; }
+    .testimonials-header { text-align: center; max-width: 560px; margin: 0 auto 64px; }
+    .testimonials-header .section-label { color: var(--sage); }
+    .testimonials-header .section-title { color: #fff; }
+    .testimonials-header p { color: rgba(255,255,255,0.6); font-size: 0.95rem; margin-top: 12px; }
+    .testi-slider { position: relative; max-width: 780px; margin: 0 auto; }
+    .testi-track { overflow: hidden; }
+    .testi-slides { display: flex; transition: transform 0.55s cubic-bezier(0.4,0.2,0.2,1); }
+    .testi-slide { min-width: 100%; padding: 0 16px; display: flex; flex-direction: column; align-items: center; text-align: center; opacity: 0; transition: opacity 0.4s; }
+    .testi-slide.active { opacity: 1; }
+    .testi-big-quote { font-family: var(--heading-font); font-size: 6rem; line-height: 0.6; color: var(--gold); opacity: 0.4; margin-bottom: 32px; user-select: none; }
+    .testi-slide blockquote { font-size: 1.05rem; line-height: 1.9; color: rgba(255,255,255,0.85); font-style: italic; margin-bottom: 40px; max-width: 640px; }
+    .testi-divider { width: 48px; height: 2px; background: var(--gold); opacity: 0.5; margin: 0 auto 32px; }
+    .testi-person { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+    .testi-avatar { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; border: 3px solid var(--gold); box-shadow: 0 0 0 4px rgba(201,168,76,0.15); }
+    .testi-name { font-weight: 700; color: #fff; font-size: 1rem; }
+    .testi-role { color: var(--sage); font-size: 0.82rem; margin-top: 2px; }
+    .testi-org { color: rgba(255,255,255,0.4); font-size: 0.78rem; margin-top: 1px; }
+    .stars { display: flex; gap: 4px; justify-content: center; margin-bottom: 8px; }
+    .stars i { color: var(--gold); font-size: 0.78rem; }
+    .testi-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 46px; height: 46px; border-radius: 50%; background: rgba(255,255,255,0.07); border: 1.5px solid rgba(255,255,255,0.15); color: #fff; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; z-index: 2; }
+    .testi-arrow:hover { background: var(--gold); border-color: var(--gold); color: var(--forest); }
+    .testi-arrow.prev { left: -60px; }
+    .testi-arrow.next { right: -60px; }
+    .carousel-controls { display: flex; justify-content: center; gap: 8px; margin-top: 44px; }
+    .carousel-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.2); cursor: pointer; transition: all 0.3s; }
+    .carousel-dot.active { background: var(--gold); width: 28px; border-radius: 4px; }
+
+    /* ── CTA BANNER ── */
+    .cta-banner { padding: 80px; background: linear-gradient(135deg, var(--forest) 0%, var(--leaf) 100%); display: flex; justify-content: space-between; align-items: center; gap: 40px; }
+    .cta-banner h2 { font-family: var(--heading-font); font-size: clamp(1.8rem, 3vw, 2.6rem); color: #fff; font-weight: 700; max-width: 560px; line-height: 1.25; }
+    .cta-banner h2 em { font-style: italic; color: var(--gold); }
+    .cta-actions { display: flex; gap: 16px; flex-shrink: 0; }
+    .btn-gold { background: var(--gold); color: var(--forest); padding: 14px 32px; border-radius: 2px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: all 0.25s; }
+    .btn-gold:hover { background: #e0bc62; transform: translateY(-1px); }
+    .btn-white { border: 1.5px solid rgba(255,255,255,0.4); color: #fff; padding: 14px 32px; border-radius: 2px; text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: all 0.25s; }
+    .btn-white:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--charcoal); padding: 80px 80px 0; }
+    .footer-grid { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1.4fr; gap: 60px; padding-bottom: 60px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .footer-brand img { height: 40px; margin-bottom: 20px; }
+    .footer-brand p { color: rgba(255,255,255,0.5); font-size: 0.875rem; line-height: 1.8; margin-bottom: 28px; }
+    .social-links { display: flex; gap: 12px; }
+    .social-link { width: 36px; height: 36px; background: rgba(255,255,255,0.07); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; transition: all 0.2s; }
+    .social-link:hover { background: var(--sage); color: #fff; }
+    .footer-col h4 { color: #fff; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 24px; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.875rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--sage); }
+    .footer-contact { display: flex; flex-direction: column; gap: 14px; }
+    .contact-item { display: flex; gap: 12px; color: rgba(255,255,255,0.5); font-size: 0.875rem; }
+    .contact-item i { color: var(--sage); margin-top: 2px; flex-shrink: 0; }
+    .contact-item a { color: inherit; text-decoration: none; }
+    .contact-item a:hover { color: var(--sage); }
+    .footer-bottom { padding: 24px 0; display: flex; justify-content: space-between; align-items: center; }
+    .footer-bottom p { color: rgba(255,255,255,0.35); font-size: 0.8rem; }
+    .footer-bottom a { color: var(--sage); text-decoration: none; }
+
+    /* ── READING PROGRESS ── */
+    .reading-progress { position: fixed; top: 0; left: 0; z-index: 200; height: 3px; width: 0%; background: linear-gradient(to right, var(--sage), var(--gold)); transition: width 0.1s linear; pointer-events: none; }
+
+    /* ── IMAGE REVEAL ── */
+    .who-img-main { transform: scale(1.06); transition: transform 1.2s ease; }
+    .who-images.revealed .who-img-main { transform: scale(1); }
+
+    /* ── CROP TAG TOOLTIPS ── */
+    .crop-tag { position: relative; cursor: default; }
+    .crop-tooltip { position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%) translateY(6px); background: var(--charcoal); color: #fff; font-size: 0.75rem; padding: 6px 12px; border-radius: 4px; white-space: nowrap; opacity: 0; pointer-events: none; transition: all 0.2s; z-index: 10; }
+    .crop-tooltip::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 5px solid transparent; border-top-color: var(--charcoal); }
+    .crop-tag:hover .crop-tooltip { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* ── SCROLL UP ── */
+    .scroll-up { position: fixed; bottom: 32px; right: 32px; width: 44px; height: 44px; background: var(--forest); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1rem; cursor: pointer; text-decoration: none; opacity: 0; transform: translateY(10px); transition: all 0.3s; z-index: 50; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    .scroll-up.visible { opacity: 1; transform: translateY(0); }
+    .scroll-up:hover { background: var(--leaf); }
+
+    /* ── FADE IN ── */
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1100px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    }
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .nav-toggle { display: block; }
+      .page-hero-content { padding: 0 32px 48px; }
+      .who-we-are { grid-template-columns: 1fr; padding: 70px 32px; gap: 48px; }
+      .who-img-accent { display: none; }
+      .mvv { grid-template-columns: 1fr; padding: 0 32px 70px; }
+      .what-we-do { padding: 70px 32px; }
+      .what-grid { grid-template-columns: 1fr; }
+      .counters-strip { grid-template-columns: repeat(2,1fr); padding: 40px 32px; }
+      .counter-item:nth-child(2) { border-right: none; }
+      .counter-item:nth-child(3) { border-top: 1px solid rgba(0,0,0,0.08); border-right: 1px solid rgba(0,0,0,0.08); }
+      .testimonials { padding: 70px 32px; }
+      .testi-arrow.prev { left: -8px; }
+      .testi-arrow.next { right: -8px; }
+      .testi-slide blockquote { font-size: 0.9rem; }
+      .cta-banner { flex-direction: column; padding: 60px 32px; text-align: center; }
+      .cta-actions { justify-content: center; }
+      footer { padding: 60px 32px 0; }
+      .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+      .divider { margin: 0 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Reading Progress -->
+<div class="reading-progress" id="readingProgress"></div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo">
+    <img src="assets/img/ngite_space_logo.png" alt="Ngite Space">
+    <span>Ngite Space</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="campaigns.html">Projects</a></li>
+    <li><a href="beyco.html" class="active">BEYCO</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+  </ul>
+  <button class="nav-toggle" onclick="toggleMobileMenu()" aria-label="Menu">
+    <i class="fas fa-bars" id="menuIcon"></i>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="campaigns.html">Projects</a>
+  <a href="beyco.html">BEYCO</a>
+  <a href="blog.html">Blog</a>
+  <a href="contact.html">Contact Us</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg" id="heroBg"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <ol class="breadcrumb">
+      <li><a href="index.html">Home</a></li>
+      <li class="sep">BEYCO</li>
+    </ol>
+    <h1>BEYCO — <em>Digital Traceability</em><br>for Coffee & Cocoa</h1>
+  </div>
+</section>
+
+<!-- WHAT IS BEYCO — mirrors "Who We Are" -->
+<section class="who-we-are">
+  <div class="who-images fade-in">
+    <img src="assets/img/cocoabg.webp" alt="BEYCO Platform" class="who-img-main">
+    <img src="assets/img/coffee1.jpg" alt="Coffee farming" class="who-img-accent">
+  </div>
+  <div class="fade-in">
+    <span class="section-label">What is BEYCO</span>
+    <h2 class="section-title">The First Independent <em>Coffee & Cocoa</em> Trading Platform</h2>
+    <div class="reg-badge">
+      <i class="fas fa-link"></i>
+      In Partnership with Progreso Foundation · Uganda
+    </div>
+    <p class="body-text">BEYCO is both a web-based and mobile digital traceability platform developed by the <strong>Progreso Foundation</strong> and implemented in partnership with <strong>Ngite Space Limited</strong> in Uganda to support producer organisations, exporters and other stakeholders.</p>
+    <p class="body-text">It digitises the coffee and cocoa value chains at an affordable cost. It is the first independent digital coffee and cocoa trading platform that allows farmers and producer organisations to have <strong>full ownership over their data</strong>.</p>
+    <p class="body-text">BEYCO uses Blockchain technology to empower supply chain parties — creating a future where every bean contributes to a better world.</p>
+    <p class="body-text" style="font-weight: 600; color: var(--forest);">Supported value chains:</p>
+    <div class="priority-crops">
+      <div class="crop-tag">
+        <i class="fas fa-mug-hot"></i> Coffee
+        <span class="crop-tooltip">Arabica & Robusta · Kasese, Bundibugyo</span>
+      </div>
+      <div class="crop-tag">
+        <i class="fas fa-seedling"></i> Cocoa
+        <span class="crop-tooltip">Fine Flavour Cocoa · Western Uganda</span>
+      </div>
+    </div>
+    <br>
+    <a href="contact.html" class="btn-primary">Get a BEYCO Account <i class="fas fa-arrow-right"></i></a>
+  </div>
+</section>
+
+<!-- KEY BENEFITS — mirrors MVV cards -->
+<div class="mvv">
+  <div class="mvv-card mission fade-in">
+    <div class="mvv-icon"><i class="fas fa-link"></i></div>
+    <h3>Blockchain Ownership</h3>
+    <p>BEYCO uses Blockchain technology so every actor — from farmer to buyer — holds full, verifiable ownership of their data with no third party interference.</p>
+  </div>
+  <div class="mvv-card vision fade-in">
+    <div class="mvv-icon"><i class="fas fa-leaf"></i></div>
+    <h3>EUDR Compliance Ready</h3>
+    <p>Built-in deforestation risk analysis that generates the documentation and evidence needed to satisfy EU Deforestation Regulation requirements affordably.</p>
+  </div>
+  <div class="mvv-card values fade-in">
+    <div class="mvv-icon"><i class="fas fa-mobile-alt"></i></div>
+    <h3>Mobile & Web Access</h3>
+    <p>The Beyco Farmer App allows producer organisations to collect data on members, production and deliveries — making products traceable down to farm level.</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- COUNTERS STRIP -->
+<div class="counters-strip">
+  <div class="counter-item">
+    <div class="counter-num">
+      <span class="counter" data-target="6">0</span><span class="suffix">+</span>
+    </div>
+    <div class="counter-label">Platform Features</div>
+  </div>
+  <div class="counter-item">
+    <div class="counter-num">
+      <span class="counter" data-target="2">0</span>
+    </div>
+    <div class="counter-label">Supported Crops</div>
+  </div>
+  <div class="counter-item">
+    <div class="counter-num">
+      <span class="counter" data-target="100">0</span><span class="suffix">%</span>
+    </div>
+    <div class="counter-label">Data Ownership</div>
+  </div>
+  <div class="counter-item">
+    <div class="counter-num">
+      <span class="counter" data-target="1">0</span>
+    </div>
+    <div class="counter-label">Independent Platform</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- WHY BEYCO — mirrors "What We Do" dark section -->
+<section class="what-we-do">
+  <div class="what-header fade-in">
+    <span class="section-label" style="color: var(--sage);">Why BEYCO</span>
+    <h2 class="section-title">Six Ways BEYCO <em>Strengthens</em> Your Position</h2>
+    <p>BEYCO aims to strengthen the market position of every actor in the value chain — from smallholder farmers to international buyers.</p>
+  </div>
+  <div class="what-grid">
+    <div class="what-item fade-in">
+      <div class="what-num">01</div>
+      <h4>Farmer Registration & Management <span class="expand-icon">+</span></h4>
+      <p>Register and manage complete farmer data including profiles, production volumes and delivery records — all digitally, all in one place.</p>
+    </div>
+    <div class="what-item fade-in">
+      <div class="what-num">02</div>
+      <h4>EUDR Deforestation Risk Analysis <span class="expand-icon">+</span></h4>
+      <p>Built-in tools that generate the deforestation risk analysis and compliance documentation required under the EU Deforestation Regulation.</p>
+    </div>
+    <div class="what-item fade-in">
+      <div class="what-num">03</div>
+      <h4>Full Supply Chain Traceability <span class="expand-icon">+</span></h4>
+      <p>Farmer and supply chain stories attached to every product at every step — traceable right down to the individual farm level via the Beyco Farmer App.</p>
+    </div>
+    <div class="what-item fade-in">
+      <div class="what-num">04</div>
+      <h4>Cost-Effective EUDR Solution <span class="expand-icon">+</span></h4>
+      <p>The most affordable solution on the market for achieving and demonstrating full EU Deforestation Regulation compliance without enterprise-level costs.</p>
+    </div>
+    <div class="what-item fade-in">
+      <div class="what-num">05</div>
+      <h4>Direct Buyer Connections <span class="expand-icon">+</span></h4>
+      <p>Connect producer organisations directly with international buyers through the integrated digital trading platform — removing unnecessary intermediaries.</p>
+    </div>
+    <div class="what-item fade-in">
+      <div class="what-num">06</div>
+      <h4>Real-Time Trade & Market Data <span class="expand-icon">+</span></h4>
+      <p>Access live pricing, trade flows, and market intelligence to make informed sourcing and selling decisions from a position of knowledge and strength.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS — identical to about.html -->
+<section class="testimonials">
+  <div class="testimonials-header fade-in">
+    <span class="section-label">What Our Clients Say</span>
+    <h2 class="section-title">Voices That <em>Trust Us</em></h2>
+    <p>Discover why businesses trust Ngite Space to lead their sustainability and climate resilience journeys.</p>
+  </div>
+  <div class="testi-slider fade-in">
+    <button class="testi-arrow prev" id="testiPrev"><i class="fas fa-arrow-left"></i></button>
+    <div class="testi-track">
+      <div class="testi-slides" id="testiSlides">
+        <div class="testi-slide active">
+          <div class="testi-big-quote">"</div>
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <blockquote>I've known Ngite Space to be actively involved in promoting sustainable agricultural practices in cocoa and coffee growing areas to mitigate and adapt to climate change. The company has been embarking on farmer trainings on soil conservation, irrigation and agroforestry, thereby promoting farmer resilience against climate change.</blockquote>
+          <div class="testi-divider"></div>
+          <div class="testi-person">
+            <img src="assets/img/test_1.JPG" alt="Mutooro Martin" class="testi-avatar">
+            <div>
+              <div class="testi-name">Mutooro Martin</div>
+              <div class="testi-role">Coffee & Cocoa Stakeholder</div>
+              <div class="testi-org">Kasese District</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-slide">
+          <div class="testi-big-quote">"</div>
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <blockquote>I have visited Ngite Space model farms for both cocoa and coffee — providing a learning opportunity in the areas of farming and trade. Ngite Space provides market for cocoa and coffee produced by smallholder farmers in districts of Kasese and Bundibugyo, thereby touching farmers' livelihoods.</blockquote>
+          <div class="testi-divider"></div>
+          <div class="testi-person">
+            <img src="assets/img/test_2.jpg" alt="Mbabazi Flaviah" class="testi-avatar">
+            <div>
+              <div class="testi-name">Mbabazi Flaviah</div>
+              <div class="testi-role">Environmentalist</div>
+              <div class="testi-org">Green Watch</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-slide">
+          <div class="testi-big-quote">"</div>
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <blockquote>The first consignment I bought from Ngite Space was cocoa and its quality told a story of commitment to meeting customer needs and changing lives of farming communities. Their model with climate change activism puts sustainability at the forefront — I'm sure of continued partnership.</blockquote>
+          <div class="testi-divider"></div>
+          <div class="testi-person">
+            <img src="assets/img/test_5.JPG" alt="Joylet Musimenta" class="testi-avatar">
+            <div>
+              <div class="testi-name">Joylet Musimenta</div>
+              <div class="testi-role">Cocoa Buyer</div>
+              <div class="testi-org">Global Trading Ltd</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="testi-arrow next" id="testiNext"><i class="fas fa-arrow-right"></i></button>
+  </div>
+  <div class="carousel-controls" id="testiDots"></div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <h2>Need a BEYCO account to <em>digitise</em> your value chain?</h2>
+  <div class="cta-actions">
+    <a href="contact.html" class="btn-gold">Get In Touch</a>
+    <a href="eudr.html" class="btn-white">Learn About EUDR</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="assets/img/ngite_space_logo.png" alt="Ngite Space">
+      <p>We're committed to blending agribusiness with environmental awareness and action. Join us in making a difference for coffee and cocoa communities across Uganda.</p>
+      <div class="social-links">
+        <a href="https://instagram.com/ngite_space" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/ngitespace" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="campaigns.html">Projects</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Projects</h4>
+      <ul class="footer-links">
+        <li><a href="campaigns.html">Ngite Climate Auditorium</a></li>
+        <li><a href="campaigns.html">Women for Climate</a></li>
+        <li><a href="campaigns.html">Responsible Waste Disposal</a></li>
+        <li><a href="campaigns.html">Food Security Initiative</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <div class="footer-contact">
+        <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>P.O Box 188312, Kampala, Uganda</span></div>
+        <div class="contact-item"><i class="fas fa-phone"></i><a href="tel:+256779642488">+256 779 642 488</a></div>
+        <div class="contact-item"><i class="fas fa-envelope"></i><a href="mailto:info@ngitespace.com">info@ngitespace.com</a></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© <span id="year"></span> Ngite Space Limited. All rights reserved.</p>
+    <p>Developed by <a href="https://mutooro.xyz" target="_blank">Mutooro</a></p>
+  </div>
+</footer>
+
+<a href="#" class="scroll-up" id="scrollUp"><i class="fas fa-arrow-up"></i></a>
+
+<script>
+  // ── NAV SCROLL + PROGRESS BAR ──
+  const nav = document.getElementById('mainNav');
+  const scrollUpBtn = document.getElementById('scrollUp');
+  const progressBar = document.getElementById('readingProgress');
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    nav.classList.toggle('scrolled', scrollY > 60);
+    scrollUpBtn.classList.toggle('visible', scrollY > 400);
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    progressBar.style.width = ((scrollY / docHeight) * 100) + '%';
+    const heroBg = document.getElementById('heroBg');
+    if (heroBg) heroBg.style.transform = `translateY(${scrollY * 0.25}px)`;
+  });
+
+  // ── MOBILE MENU ──
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const icon = document.getElementById('menuIcon');
+    menu.classList.toggle('open');
+    icon.className = menu.classList.contains('open') ? 'fas fa-times' : 'fas fa-bars';
+  }
+
+  // ── HERO BG ZOOM ──
+  setTimeout(() => document.getElementById('heroBg').classList.add('loaded'), 100);
+
+  // ── ANIMATED COUNTERS ──
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target);
+    const duration = 1800;
+    const start = performance.now();
+    const easeOut = t => 1 - Math.pow(1 - t, 3);
+    function step(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      el.textContent = Math.floor(easeOut(progress) * target);
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = target;
+    }
+    requestAnimationFrame(step);
+  }
+
+  // ── INTERSECTION OBSERVER ──
+  const countersDone = new Set();
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (!entry.isIntersecting) return;
+      if (entry.target.classList.contains('fade-in')) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      }
+      if (entry.target.classList.contains('who-images')) {
+        entry.target.classList.add('revealed');
+      }
+      if (entry.target.classList.contains('counters-strip')) {
+        if (countersDone.has('done')) return;
+        countersDone.add('done');
+        entry.target.querySelectorAll('.counter').forEach((el, idx) => {
+          setTimeout(() => animateCounter(el), idx * 150);
+        });
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in, .who-images, .counters-strip').forEach(el => observer.observe(el));
+
+  // ── TESTIMONIAL CAROUSEL ──
+  const slides = document.querySelectorAll('.testi-slide');
+  const slidesTrack = document.getElementById('testiSlides');
+  const dotsContainer = document.getElementById('testiDots');
+  let current = 0;
+  let autoTimer;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => { goTo(i); resetAuto(); });
+    dotsContainer.appendChild(dot);
+  });
+
+  function goTo(n) {
+    slides[current].classList.remove('active');
+    dotsContainer.querySelectorAll('.carousel-dot')[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slidesTrack.style.transform = `translateX(-${current * 100}%)`;
+    slides[current].classList.add('active');
+    dotsContainer.querySelectorAll('.carousel-dot')[current].classList.add('active');
+  }
+
+  document.getElementById('testiPrev').addEventListener('click', () => { goTo(current - 1); resetAuto(); });
+  document.getElementById('testiNext').addEventListener('click', () => { goTo(current + 1); resetAuto(); });
+
+  function startAuto() { autoTimer = setInterval(() => goTo(current + 1), 5000); }
+  function resetAuto() { clearInterval(autoTimer); startAuto(); }
+  startAuto();
+
+  let txStart = 0;
+  slidesTrack.addEventListener('touchstart', e => txStart = e.touches[0].clientX, { passive: true });
+  slidesTrack.addEventListener('touchend', e => {
+    const diff = txStart - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) { diff > 0 ? goTo(current + 1) : goTo(current - 1); resetAuto(); }
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
