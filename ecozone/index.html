@@ -38,7 +38,9 @@
       scroll-behavior: smooth;
     }
 
-    html { overflow-x: hidden; }
+    html {
+      overflow-x: hidden;
+    }
 
     body {
       font-family: var(--body-font);
@@ -1448,6 +1450,7 @@
       <li><a href="about.html">About</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="campaigns.html">Projects</a></li>
+      <li><a href="beyco.html" class="">BEYCO</a></li>
       <li><a href="blog.html">Blog</a></li>
       <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
     </ul>
@@ -1460,6 +1463,7 @@
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
     <a href="campaigns.html">Projects</a>
+    <li><a href="beyco.html" class="">BEYCO</a></li>
     <a href="blog.html">Blog</a>
     <a href="contact.html">Contact Us</a>
   </div>
@@ -1953,20 +1957,20 @@
   </footer>
 
   <!-- Chatbase Widget -->
-<script>
-(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="gmEjR4pViIOT5j0cXPiye";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-</script>
+  <script>
+    (function () { if (!window.chatbase || window.chatbase("getState") !== "initialized") { window.chatbase = (...arguments) => { if (!window.chatbase.q) { window.chatbase.q = [] } window.chatbase.q.push(arguments) }; window.chatbase = new Proxy(window.chatbase, { get(target, prop) { if (prop === "q") { return target.q } return (...args) => target(prop, ...args) } }) } const onLoad = function () { const script = document.createElement("script"); script.src = "https://www.chatbase.co/embed.min.js"; script.id = "gmEjR4pViIOT5j0cXPiye"; script.domain = "www.chatbase.co"; document.body.appendChild(script) }; if (document.readyState === "complete") { onLoad() } else { window.addEventListener("load", onLoad) } })();
+  </script>
 
-<!-- Auto-open chat after 5 seconds -->
-<script>
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      if (window.chatbase && typeof window.chatbase === 'function') {
-        window.chatbase('open');
-      }
-    }, 5000);
-  });
-</script>
+  <!-- Auto-open chat after 5 seconds -->
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        if (window.chatbase && typeof window.chatbase === 'function') {
+          window.chatbase('open');
+        }
+      }, 5000);
+    });
+  </script>
 
   <script>
     // NAV scroll effect
