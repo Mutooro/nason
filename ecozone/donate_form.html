@@ -1,99 +1,268 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
-  <head>
-    <!-- Meta Tags -->
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Laralink">
-    <!-- Favicon Icon -->
-    <link rel="icon" href="assets/img/ngite_space_logo.png" style="height: 100%;">
-    <!-- Site Title -->
-    <title>Services | Ecozone - Ecology & Environment HTML Template</title>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
-    <link rel="stylesheet" href="assets/css/slick.min.css">
-    <link rel="stylesheet" href="assets/css/odometer.css">
-    <link rel="stylesheet" href="assets/css/light-gallerr.min.css">
-    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  </head>
-  <body>
-    <!-- Start Preloader -->
-    <div class="cs_preloader">
-      <div class="cs_preloader_in">
-        <span></span>
-        <span></span>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donate | Ngite Space Limited</title>
+  <meta name="description"
+    content="Support Ngite Space Limited's mission to build climate resilience and greener value chains. Your donation makes a difference.">
+  <link rel="icon" href="assets/img/ngite_space_logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/donate_form.css">
+</head>
+
+<body>
+
+  <!-- Reading progress bar -->
+  <div class="reading-progress" id="readingProgress"></div>
+
+  <!-- NAV -->
+  <nav id="mainNav">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/img/ngite_space_logo.png" alt="Ngite Space Logo">
+      <span>Ngite Space</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="campaigns.html">Campaigns</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="donate_form.html" class="nav-cta active">Donate</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="campaigns.html">Campaigns</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+    <a href="donate_form.html">Donate</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-bg" id="heroBg"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li class="sep">Donate</li>
+      </ul>
+      <h1>Support Our <em>Mission</em></h1>
+      <p>Help us build climate resilience and greener value chains for coffee &amp; cocoa communities</p>
+    </div>
+  </section>
+
+  <!-- IMPACT STATS -->
+  <div class="impact-strip">
+    <div class="impact-item">
+      <span class="impact-num">2,400+</span>
+      <span class="impact-label">Farmers Supported</span>
+    </div>
+    <div class="impact-item">
+      <span class="impact-num">8</span>
+      <span class="impact-label">Countries Active</span>
+    </div>
+    <div class="impact-item">
+      <span class="impact-num">15+</span>
+      <span class="impact-label">Projects Funded</span>
+    </div>
+    <div class="impact-item">
+      <span class="impact-num">100%</span>
+      <span class="impact-label">Goes to Impact</span>
+    </div>
+  </div>
+
+  <!-- DONATE SECTION -->
+  <section class="donate-section">
+    <div class="donate-left fade-in">
+      <span class="section-label">Make a Difference</span>
+      <h2 class="section-title">Your Contribution <em>Changes Lives</em></h2>
+      <p class="body-text">
+        Every donation directly supports smallholder coffee and cocoa farmers in building climate resilience,
+        accessing better markets, and securing sustainable livelihoods for their families.
+      </p>
+
+      <div class="donation-uses">
+        <div class="use-item">
+          <div class="use-icon"><i class="fa-solid fa-seedling"></i></div>
+          <div class="use-text">
+            <strong>Climate Adaptation</strong>
+            <span>Training farmers in climate-smart agriculture practices</span>
+          </div>
+        </div>
+        <div class="use-item">
+          <div class="use-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+          <div class="use-text">
+            <strong>Market Access</strong>
+            <span>Connecting smallholders to fair and sustainable markets</span>
+          </div>
+        </div>
+        <div class="use-item">
+          <div class="use-icon"><i class="fa-solid fa-venus"></i></div>
+          <div class="use-text">
+            <strong>Gender Equity</strong>
+            <span>Empowering women farmers with resources and voices</span>
+          </div>
+        </div>
+        <div class="use-item">
+          <div class="use-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <div class="use-text">
+            <strong>Research &amp; Advocacy</strong>
+            <span>Evidence-based policy work for systemic change</span>
+          </div>
+        </div>
       </div>
-      <div class="cs_preloader_shape"><img src="https://html.laralink.com/ecozone/assets/img/nature/about_shape_1.svg" alt=""></div>
-      <div class="cs_preloader_shape_2"><img src="https://html.laralink.com/ecozone/assets/img/nature/about_shape_2.svg" alt=""></div>
-    </div>
-    <!-- End Preloader -->
-    <!-- Start Header Section -->
-    <div id="header-container"></div>
-    <script>
-      $(document).ready(function() {
-        // Load the footer.html into the #footer-container
-        $('#header-container').load('header.html');
-      });
-    </script> 
- 
-  
-    <!-- End Header Section -->
-    <!-- Start Hero Section -->
-    <section class="cs_page_heading cs_bg_filed cs_center text-center cs_heading_bg" data-src="assets/img/page_heading_bg.jpg">
-      <div class="container">
-        <h1 class="cs_fs_51 cs_white_color cs_mb_11">Donate</h1>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active">Donate</li>
-        </ol>
+
+      <div class="trust-badge">
+        <i class="fa-solid fa-shield-halved"></i>
+        <div>
+          <strong>Secure &amp; Trusted</strong>
+          <span>Your donation is processed securely. We are a registered social enterprise committed to full
+            transparency.</span>
+        </div>
       </div>
-    </section>
-    <!-- End Hero Section -->
-    <!-- Start Services Section -->
-    <div class="cs_height_150 cs_height_lg_80"></div>
-    <div class="container">
-      
-<!-- insert here the link for the form -->
-
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeqz0EXV0h5BcgzqGmpwyPD9ZeYbiaI5y6eT-phGjBSHfB-rg/viewform?embedded=true" width="80%" height="1440" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-
-      
     </div>
-    <div class="cs_height_150 cs_height_lg_80"></div>
-    <!-- End Services Section -->
-    <!-- Start Footer Section -->
-    <!-- Placeholder for the footer -->
-<div id="footer-container"></div>
-<script>
-  $(document).ready(function() {
-    // Load the footer.html into the #footer-container
-    $('#footer-container').load('footer.html');
-  });
-</script>
 
-    <!-- End Footer Section -->
-    <!-- Start Scroll Up Button -->
-    <div class="cs_scrollup">
-      <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 16 16"><path fill="currentColor" d="M7.5 13.022V14.5a.5.5 0 0 0 1 0v-1.478a4.886 4.886 0 0 0 2.775-8.486l-2.437-2.2a1.25 1.25 0 0 0-1.676 0l-2.437 2.2A4.886 4.886 0 0 0 7.5 13.022Zm3.105-7.744A3.886 3.886 0 0 1 8.5 12.015V7.501a.5.5 0 0 0-1 0v4.514a3.886 3.886 0 0 1-2.105-6.737l2.437-2.2a.25.25 0 0 1 .336 0l2.437 2.2Z"></path></svg>
+    <div class="donate-right fade-in">
+      <div class="form-card">
+        <div class="form-card-header">
+          <i class="fa-solid fa-hand-holding-heart"></i>
+          <h3>Donation Form</h3>
+          <p>Fill in the form below to complete your donation</p>
+        </div>
+        <div class="form-iframe-wrapper">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSeqz0EXV0h5BcgzqGmpwyPD9ZeYbiaI5y6eT-phGjBSHfB-rg/viewform?embedded=true"
+            frameborder="0" marginheight="0" marginwidth="0" title="Donation Form" loading="lazy">
+            Loading…
+          </iframe>
+        </div>
+      </div>
     </div>
-    <!-- End Scroll Up Button -->
-    
-    <!-- Script -->
-    <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/jquery.slick.min.js"></script>
-    <script src="assets/js/odometer.js"></script>
-    <script src="assets/js/YTPlayer.min.js"></script>
-    <script src="assets/js/light-gallery.min.js"></script>
-    <script src="assets/js/jquery-ui.min.js"></script>
-    <script src="assets/js/ripples.min.js"></script>
-    <script src="assets/js/gsap.min.js"></script>
-   <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/main.js"></script>
-  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'922368cd8f6273cc',t:'MTc0MjI4NzA2MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="divider"></div>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="cta-text">
+      <h2>Other Ways to <em>Support Us</em></h2>
+      <p>Beyond financial support, you can help us by spreading the word, volunteering your expertise, or partnering
+        with us on projects.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="contact.html" class="btn-gold">Partner With Us</a>
+      <a href="campaigns.html" class="btn-white">View Campaigns</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/img/ngite_space_logo.png" alt="Ngite Space">
+        <p>Building climate resilience and adaptive capacity in the world's food system and global trade — focusing on
+          coffee and cocoa value chains.</p>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="campaigns.html">Campaigns</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Our Work</h4>
+        <ul class="footer-links">
+          <li><a href="eudr.html">EUDR Compliance</a></li>
+          <li><a href="beyco.html">Beyco Platform</a></li>
+          <li><a href="publication_01.html">Publications</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="donate_form.html">Donate</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact">
+          <div class="contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Kampala, Uganda</span>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:info@ngitespace.com">info@ngitespace.com</a>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:+256700000000">+256 700 000 000</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Ngite Space Limited. All rights reserved.</p>
+      <p>Designed with <i class="fa-solid fa-heart" style="color:var(--sage);font-size:0.75rem;"></i> for a greener
+        planet</p>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+      // Reading progress
+      const doc = document.documentElement;
+      const scrolled = (window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100;
+      document.getElementById('readingProgress').style.width = scrolled + '%';
+    });
+
+    // Mobile menu
+    const navToggle = document.getElementById('navToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    navToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      navToggle.innerHTML = mobileMenu.classList.contains('open')
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-bars"></i>';
+    });
+
+    // Hero parallax bg
+    document.getElementById('heroBg').style.backgroundImage = "url('assets/img/New_Images/The-Cocoa-Impact-story-1024x683.webp')";
+    document.getElementById('heroBg').classList.add('loaded');
+
+    // Fade-in on scroll
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    fadeEls.forEach(el => observer.observe(el));
+  </script>
+</body>
+
 </html>

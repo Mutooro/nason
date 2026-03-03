@@ -160,7 +160,7 @@
     /* ── PAGE HERO ── */
     .page-hero {
       position: relative;
-      height: 460px;
+      height: 260px;
       display: flex;
       align-items: flex-end;
       overflow: hidden;
@@ -170,7 +170,7 @@
     .page-hero-bg {
       position: absolute;
       inset: 0;
-      background: url('assets/img/cocoa2.jpeg') center/cover no-repeat;
+      /* background: url('assets/img/cocoa2.jpeg') center/cover no-repeat; */
       transform: scale(1.05);
       transition: transform 8s ease;
     }
