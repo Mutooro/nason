@@ -1,5 +1,4 @@
-﻿
-    *,
+﻿    *,
     *::before,
     *::after {
       box-sizing: border-box;
@@ -31,7 +30,7 @@
       overflow-x: hidden;
     }
 
-    /* â”€â”€ NAV â”€â”€ */
+    /* ── NAV ── */
     nav {
       position: fixed;
       top: 0;
@@ -152,13 +151,13 @@
     .mobile-menu a {
       color: rgba(255, 255, 255, 0.85);
       text-decoration: none;
-      font-size: 0.875rem;
+      font-size: 1rem;
       font-weight: 500;
       padding: 8px 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    /* â”€â”€ PAGE HERO â”€â”€ */
+    /* ── PAGE HERO ── */
     .page-hero {
       position: relative;
       height: 460px;
@@ -234,7 +233,7 @@
       color: var(--gold);
     }
 
-    /* â”€â”€ SHARED â”€â”€ */
+    /* ── SHARED ── */
     .section-label {
       display: inline-block;
       color: var(--sage);
@@ -264,8 +263,7 @@
       line-height: 1.85;
       font-size: 0.95rem;
       margin-bottom: 16px;
-      text-align: justify;
-}
+    }
 
     .btn-primary {
       display: inline-flex;
@@ -292,7 +290,7 @@
       margin: 0 80px;
     }
 
-    /* â”€â”€ READING PROGRESS â”€â”€ */
+    /* ── READING PROGRESS ── */
     .reading-progress {
       position: fixed;
       top: 0;
@@ -305,7 +303,7 @@
       pointer-events: none;
     }
 
-    /* â”€â”€ SERVICES INTRO â”€â”€ */
+    /* ── SERVICES INTRO ── */
     .services-intro {
       padding: 100px 80px;
       display: grid;
@@ -352,7 +350,7 @@
       opacity: 0.85;
     }
 
-    /* â”€â”€ SERVICES GRID â”€â”€ */
+    /* ── SERVICES GRID ── */
     .services-section {
       padding: 100px 80px;
       background: var(--cream);
@@ -368,8 +366,7 @@
       color: var(--muted);
       font-size: 0.95rem;
       line-height: 1.8;
-      text-align: justify;
-}
+    }
 
     .services-grid {
       display: grid;
@@ -433,8 +430,7 @@
       color: var(--muted);
       font-size: 0.875rem;
       line-height: 1.75;
-      text-align: justify;
-}
+    }
 
     .service-num {
       position: absolute;
@@ -447,7 +443,7 @@
       line-height: 1;
     }
 
-    /* â”€â”€ PRODUCTS SECTION â”€â”€ */
+    /* ── PRODUCTS SECTION ── */
     .products-section {
       padding: 100px 80px;
       background: var(--offwhite);
@@ -463,8 +459,7 @@
       color: var(--muted);
       font-size: 0.95rem;
       line-height: 1.8;
-      text-align: justify;
-}
+    }
 
     .products-grid {
       display: grid;
@@ -538,10 +533,9 @@
       color: var(--muted);
       font-size: 0.875rem;
       line-height: 1.8;
-      text-align: justify;
-}
+    }
 
-    /* â”€â”€ WHY CHOOSE US â”€â”€ */
+    /* ── WHY CHOOSE US ── */
     .why-section {
       padding: 100px 80px;
       background: var(--forest);
@@ -575,8 +569,7 @@
       color: rgba(255, 255, 255, 0.65);
       font-size: 0.95rem;
       line-height: 1.8;
-      text-align: justify;
-}
+    }
 
     .why-grid {
       display: grid;
@@ -614,7 +607,7 @@
 
     .why-card h4 {
       font-family: var(--heading-font);
-      font-size: 0.95rem;
+      font-size: 1.05rem;
       font-weight: 600;
       color: #fff;
       margin-bottom: 10px;
@@ -624,10 +617,9 @@
       color: rgba(255, 255, 255, 0.55);
       font-size: 0.85rem;
       line-height: 1.75;
-      text-align: justify;
-}
+    }
 
-    /* â”€â”€ CTA BANNER â”€â”€ */
+    /* ── CTA BANNER ── */
     .cta-banner {
       padding: 80px;
       background: linear-gradient(135deg, var(--forest) 0%, var(--leaf) 100%);
@@ -689,7 +681,7 @@
       background: rgba(255, 255, 255, 0.08);
     }
 
-    /* â”€â”€ FOOTER â”€â”€ */
+    /* ── FOOTER ── */
     footer {
       background: var(--charcoal);
       padding: 80px 80px 0;
@@ -713,8 +705,7 @@
       font-size: 0.875rem;
       line-height: 1.8;
       margin-bottom: 28px;
-      text-align: justify;
-}
+    }
 
     .social-links {
       display: flex;
@@ -805,15 +796,14 @@
     .footer-bottom p {
       color: rgba(255, 255, 255, 0.35);
       font-size: 0.8rem;
-      text-align: justify;
-}
+    }
 
     .footer-bottom a {
       color: var(--sage);
       text-decoration: none;
     }
 
-    /* â”€â”€ SCROLL UP â”€â”€ */
+    /* ── SCROLL UP ── */
     .scroll-up {
       position: fixed;
       bottom: 32px;
@@ -826,7 +816,7 @@
       align-items: center;
       justify-content: center;
       color: #fff;
-      font-size: 0.875rem;
+      font-size: 1rem;
       cursor: pointer;
       text-decoration: none;
       opacity: 0;
@@ -845,7 +835,7 @@
       background: var(--leaf);
     }
 
-    /* â”€â”€ FADE IN â”€â”€ */
+    /* ── FADE IN ── */
     .fade-in {
       opacity: 0;
       transform: translateY(24px);
@@ -857,7 +847,7 @@
       transform: translateY(0);
     }
 
-    /* â”€â”€ RESPONSIVE â”€â”€ */
+    /* ── RESPONSIVE ── */
     @media (max-width: 1100px) {
       .services-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -972,7 +962,7 @@
       }
     }
 
-    /* â”€â”€ CATEGORY FILTER â”€â”€ */
+    /* ── CATEGORY FILTER ── */
     .filter-bar {
       display: flex;
       justify-content: center;
@@ -1025,7 +1015,7 @@
       visibility: visible;
     }
 
-    /* â”€â”€ TILT HIGHLIGHT â”€â”€ */
+    /* ── TILT HIGHLIGHT ── */
     .service-card .card-glow {
       position: absolute;
       inset: 0;
@@ -1045,7 +1035,7 @@
       z-index: 1;
     }
 
-    /* â”€â”€ WHY CARD GLOW â”€â”€ */
+    /* ── WHY CARD GLOW ── */
     .why-card {
       position: relative;
       overflow: hidden;
@@ -1073,7 +1063,7 @@
       z-index: 1;
     }
 
-    /* â”€â”€ ANIMATED BADGE â”€â”€ */
+    /* ── ANIMATED BADGE ── */
     .services-intro-badge strong {
       display: block;
       font-family: var(--heading-font);
@@ -1082,7 +1072,7 @@
       line-height: 1;
     }
 
-    /* â”€â”€ PRODUCT CARD REVEAL â”€â”€ */
+    /* ── PRODUCT CARD REVEAL ── */
     .product-card .product-info {
       transition: opacity 0.5s 0.1s, transform 0.5s 0.1s;
     }
@@ -1096,4 +1086,3 @@
       opacity: 1;
       transform: translateX(0);
     }
-  

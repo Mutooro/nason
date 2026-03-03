@@ -1,5 +1,4 @@
-﻿
-    *,
+﻿    *,
     *::before,
     *::after {
       box-sizing: border-box;
@@ -31,7 +30,7 @@
       overflow-x: hidden;
     }
 
-    /* â”€â”€ NAV (same as homepage) â”€â”€ */
+    /* ── NAV (same as homepage) ── */
     nav {
       position: fixed;
       top: 0;
@@ -152,13 +151,13 @@
     .mobile-menu a {
       color: rgba(255, 255, 255, 0.85);
       text-decoration: none;
-      font-size: 0.875rem;
+      font-size: 1rem;
       font-weight: 500;
       padding: 8px 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    /* â”€â”€ PAGE HERO â”€â”€ */
+    /* ── PAGE HERO ── */
     .page-hero {
       position: relative;
       height: 460px;
@@ -234,7 +233,7 @@
       color: var(--gold);
     }
 
-    /* â”€â”€ SHARED â”€â”€ */
+    /* ── SHARED ── */
     .section-label {
       display: inline-block;
       color: var(--sage);
@@ -264,8 +263,7 @@
       line-height: 1.85;
       font-size: 0.95rem;
       margin-bottom: 16px;
-      text-align: justify;
-}
+    }
 
     .btn-primary {
       display: inline-flex;
@@ -292,7 +290,7 @@
       margin: 0 80px;
     }
 
-    /* â”€â”€ WHO WE ARE â”€â”€ */
+    /* ── WHO WE ARE ── */
     .who-we-are {
       padding: 100px 80px;
       display: grid;
@@ -364,7 +362,7 @@
       color: var(--gold);
     }
 
-    /* â”€â”€ MISSION VISION VALUES â”€â”€ */
+    /* ── MISSION VISION VALUES ── */
     .mvv {
       padding: 0 80px 100px;
       display: grid;
@@ -456,16 +454,14 @@
       color: rgba(255, 255, 255, 0.75);
       font-size: 0.9rem;
       line-height: 1.8;
-      text-align: justify;
-}
+    }
 
     .vision p,
     .values p {
       color: var(--muted);
       font-size: 0.9rem;
       line-height: 1.8;
-      text-align: justify;
-}
+    }
 
     .values-list {
       list-style: none;
@@ -487,7 +483,7 @@
       font-size: 0.8rem;
     }
 
-    /* â”€â”€ WHAT WE DO â”€â”€ */
+    /* ── WHAT WE DO ── */
     .what-we-do {
       background: var(--forest);
       padding: 100px 80px;
@@ -519,8 +515,7 @@
       color: rgba(255, 255, 255, 0.65);
       font-size: 0.95rem;
       line-height: 1.8;
-      text-align: justify;
-}
+    }
 
     .what-grid {
       display: grid;
@@ -551,7 +546,7 @@
     }
 
     .what-item h4 {
-      font-size: 0.875rem;
+      font-size: 1rem;
       font-weight: 600;
       color: #fff;
       margin-bottom: 10px;
@@ -561,11 +556,10 @@
       color: rgba(255, 255, 255, 0.55);
       font-size: 0.85rem;
       line-height: 1.7;
-      text-align: justify;
-}
+    }
 
-    /* â”€â”€ TESTIMONIALS â”€â”€ */
-    /* â”€â”€ CTA BANNER â”€â”€ */
+    /* ── TESTIMONIALS ── */
+    /* ── CTA BANNER ── */
     .cta-banner {
       padding: 80px;
       background: linear-gradient(135deg, var(--forest) 0%, var(--leaf) 100%);
@@ -627,7 +621,7 @@
       background: rgba(255, 255, 255, 0.08);
     }
 
-    /* â”€â”€ FOOTER â”€â”€ */
+    /* ── FOOTER ── */
     footer {
       background: var(--charcoal);
       padding: 80px 80px 0;
@@ -651,8 +645,7 @@
       font-size: 0.875rem;
       line-height: 1.8;
       margin-bottom: 28px;
-      text-align: justify;
-}
+    }
 
     .social-links {
       display: flex;
@@ -743,15 +736,14 @@
     .footer-bottom p {
       color: rgba(255, 255, 255, 0.35);
       font-size: 0.8rem;
-      text-align: justify;
-}
+    }
 
     .footer-bottom a {
       color: var(--sage);
       text-decoration: none;
     }
 
-    /* â”€â”€ PROGRESS BAR â”€â”€ */
+    /* ── PROGRESS BAR ── */
     .reading-progress {
       position: fixed;
       top: 0;
@@ -764,7 +756,7 @@
       pointer-events: none;
     }
 
-    /* â”€â”€ COUNTERS â”€â”€ */
+    /* ── COUNTERS ── */
     .counters-strip {
       background: var(--offwhite);
       padding: 60px 80px;
@@ -810,7 +802,7 @@
       margin-top: 8px;
     }
 
-    /* â”€â”€ TESTIMONIAL CAROUSEL (QuantaBiz-style centered single slide) â”€â”€ */
+    /* ── TESTIMONIAL CAROUSEL (QuantaBiz-style centered single slide) ── */
     .testimonials {
       background: var(--forest);
       padding: 100px 80px;
@@ -834,8 +826,7 @@
       color: rgba(255, 255, 255, 0.6);
       font-size: 0.95rem;
       margin-top: 12px;
-      text-align: justify;
-}
+    }
 
     .testi-slider {
       position: relative;
@@ -878,7 +869,7 @@
     }
 
     .testi-slide blockquote {
-      font-size: 0.95rem;
+      font-size: 1.05rem;
       line-height: 1.9;
       color: rgba(255, 255, 255, 0.85);
       font-style: italic;
@@ -913,7 +904,7 @@
     .testi-name {
       font-weight: 700;
       color: #fff;
-      font-size: 0.875rem;
+      font-size: 1rem;
     }
 
     .testi-role {
@@ -997,7 +988,7 @@
       border-radius: 4px;
     }
 
-    /* â”€â”€ IMAGE REVEAL â”€â”€ */
+    /* ── IMAGE REVEAL ── */
     .who-img-main {
       transform: scale(1.06);
       transition: transform 1.2s ease;
@@ -1007,7 +998,7 @@
       transform: scale(1);
     }
 
-    /* â”€â”€ CROP TAG TOOLTIPS â”€â”€ */
+    /* ── CROP TAG TOOLTIPS ── */
     .crop-tag {
       position: relative;
       cursor: default;
@@ -1045,20 +1036,18 @@
       transform: translateX(-50%) translateY(0);
     }
 
-    /* â”€â”€ WHAT-ITEM EXPAND â”€â”€ */
+    /* ── WHAT-ITEM EXPAND ── */
     .what-item p {
       max-height: 0;
       overflow: hidden;
       opacity: 0;
       transition: max-height 0.4s ease, opacity 0.3s;
-      text-align: justify;
-}
+    }
 
     .what-item:hover p {
       max-height: 120px;
       opacity: 1;
-      text-align: justify;
-}
+    }
 
     .what-item h4 {
       display: flex;
@@ -1078,7 +1067,7 @@
       transform: rotate(45deg);
     }
 
-    /* â”€â”€ SCROLL UP â”€â”€ */
+    /* ── SCROLL UP ── */
     .scroll-up {
       position: fixed;
       bottom: 32px;
@@ -1091,7 +1080,7 @@
       align-items: center;
       justify-content: center;
       color: #fff;
-      font-size: 0.875rem;
+      font-size: 1rem;
       cursor: pointer;
       text-decoration: none;
       opacity: 0;
@@ -1127,7 +1116,7 @@
 
     }
 
-    /* â”€â”€ FADE IN â”€â”€ */
+    /* ── FADE IN ── */
     .fade-in {
       opacity: 0;
       transform: translateY(24px);
@@ -1139,7 +1128,7 @@
       transform: translateY(0);
     }
 
-    /* â”€â”€ RESPONSIVE â”€â”€ */
+    /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       nav {
         padding: 0 24px;
@@ -1225,4 +1214,3 @@
         margin: 0 32px;
       }
     }
-  

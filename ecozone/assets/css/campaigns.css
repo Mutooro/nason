@@ -1,5 +1,4 @@
-﻿
-    *,
+﻿    *,
     *::before,
     *::after {
       box-sizing: border-box;
@@ -31,7 +30,7 @@
       overflow-x: hidden;
     }
 
-    /* â”€â”€ NAV â”€â”€ */
+    /* ── NAV ── */
     nav {
       position: fixed;
       top: 0;
@@ -152,13 +151,13 @@
     .mobile-menu a {
       color: rgba(255, 255, 255, 0.85);
       text-decoration: none;
-      font-size: 0.875rem;
+      font-size: 1rem;
       font-weight: 500;
       padding: 8px 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    /* â”€â”€ PAGE HERO â”€â”€ */
+    /* ── PAGE HERO ── */
     .page-hero {
       position: relative;
       height: 460px;
@@ -241,10 +240,9 @@
       line-height: 1.7;
       margin-top: 16px;
       max-width: 500px;
-      text-align: justify;
-}
+    }
 
-    /* â”€â”€ SHARED â”€â”€ */
+    /* ── SHARED ── */
     .section-label {
       display: inline-block;
       color: var(--sage);
@@ -282,7 +280,7 @@
       margin: 0 80px;
     }
 
-    /* â”€â”€ IMPACT STATS â”€â”€ */
+    /* ── IMPACT STATS ── */
     .impact-strip {
       background: var(--forest);
       padding: 48px 80px;
@@ -324,7 +322,7 @@
       margin-top: 4px;
     }
 
-    /* â”€â”€ PROJECTS SECTION â”€â”€ */
+    /* ── PROJECTS SECTION ── */
     .projects-section {
       padding: 100px 80px;
     }
@@ -338,7 +336,7 @@
       margin: 0 auto;
     }
 
-    /* â”€â”€ PROJECT CARDS â”€â”€ */
+    /* ── PROJECT CARDS ── */
     .project-grid {
       display: flex;
       flex-direction: column;
@@ -465,8 +463,7 @@
       line-height: 1.85;
       text-align: justify;
       margin-bottom: 20px;
-      text-align: justify;
-}
+    }
 
     .project-highlight {
       display: flex;
@@ -529,7 +526,7 @@
       background: rgba(26, 61, 43, 0.04);
     }
 
-    /* â”€â”€ PARTNER STRIP â”€â”€ */
+    /* ── PARTNER STRIP ── */
     .partner-strip {
       padding: 60px 80px;
       background: var(--cream);
@@ -550,10 +547,9 @@
       line-height: 1.7;
       max-width: 500px;
       margin: 0 auto;
-      text-align: justify;
-}
+    }
 
-    /* â”€â”€ CTA BANNER â”€â”€ */
+    /* ── CTA BANNER ── */
     .cta-banner {
       padding: 80px;
       background: linear-gradient(135deg, var(--forest) 0%, var(--leaf) 100%);
@@ -615,7 +611,7 @@
       background: rgba(255, 255, 255, 0.08);
     }
 
-    /* â”€â”€ FOOTER â”€â”€ */
+    /* ── FOOTER ── */
     footer {
       background: var(--charcoal);
       padding: 80px 80px 0;
@@ -639,8 +635,7 @@
       font-size: 0.875rem;
       line-height: 1.8;
       margin-bottom: 28px;
-      text-align: justify;
-}
+    }
 
     .social-links {
       display: flex;
@@ -731,15 +726,14 @@
     .footer-bottom p {
       color: rgba(255, 255, 255, 0.35);
       font-size: 0.8rem;
-      text-align: justify;
-}
+    }
 
     .footer-bottom a {
       color: var(--sage);
       text-decoration: none;
     }
 
-    /* â”€â”€ SCROLL UP â”€â”€ */
+    /* ── SCROLL UP ── */
     .scroll-up {
       position: fixed;
       bottom: 32px;
@@ -752,7 +746,7 @@
       align-items: center;
       justify-content: center;
       color: #fff;
-      font-size: 0.875rem;
+      font-size: 1rem;
       cursor: pointer;
       text-decoration: none;
       opacity: 0;
@@ -771,7 +765,7 @@
       background: var(--leaf);
     }
 
-    /* â”€â”€ FADE IN â”€â”€ */
+    /* ── FADE IN ── */
     .fade-in {
       opacity: 0;
       transform: translateY(24px);
@@ -783,7 +777,7 @@
       transform: translateY(0);
     }
 
-    /* â”€â”€ RESPONSIVE â”€â”€ */
+    /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       nav {
         padding: 0 24px;
@@ -865,4 +859,3 @@
         text-align: center;
       }
     }
-  
